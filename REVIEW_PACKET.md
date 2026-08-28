@@ -76,7 +76,9 @@
 - `node tools/validate-site.mjs`, ‏`node tools/build-site.mjs` ו־`git diff --check` עברו מקומית.
 - בדיקת HTTP מקומית החזירה 200 ל־manifest, ל־Service Worker ולאייקון 192. Chrome הפעיל `beforeinstallprompt` והציג “האתר מוכן להתקנה כאפליקציה”.
 - בדיקה חזותית ב־500×900 אימתה שמגירת המסננים סגורה והספרים גלויים; בדיקת 1200×1000 בתצוגת סדרות הציגה את Defiance of the Fall פתוחה עם 12 ספרים מסודרים.
-- GitHub Actions ובדיקת האתר החי יתועדו לאחר ה־push.
+- commit `fc9dcd2` נדחף ל־`main`; ריצת האימות `33203858495` ופריסת Pages ‏`33203858504` הסתיימו בהצלחה.
+- באתר החי הדף, manifest, ‏Service Worker ו־robots החזירו HTTP 200. אומתו 926 ספרים, תצוגת סדרות, 741 תרגומים עבריים, noindex וחסימת crawlers; לא נמצאו קישורי Apple Books, ‏iTunes או fallback של Apple.
+- צילום Chrome של האתר החי ב־500×900 אימת שכפתור ההתקנה פעיל, מגירת המסננים סגורה והספר הראשון גלוי ללא גלישה אופקית.
 
 ## בעיות, מגבלות וסיכונים
 
