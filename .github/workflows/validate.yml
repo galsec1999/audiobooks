@@ -1,0 +1,36 @@
+name: Validate HTML pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+
+      - name: Validate HTML pages
+        run: node tools/validate-site.mjs
+
+      - name: Build GitHub Pages artifact
+        run: node tools/build-site.mjs
+
+      - name: Check generated homepage
+        run: test -s _site/index.html
+
+      - name: Check whitespace errors
+        run: git diff --check
+

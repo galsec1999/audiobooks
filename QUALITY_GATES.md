@@ -1,0 +1,12 @@
+# שערי איכות לפרויקט Audiobooks — גרסת מסמך 1.0.0
+
+לפני commit או פרסום חייבים להתקיים כל התנאים הבאים:
+
+1. `node tools/validate-site.mjs` מסתיים בהצלחה.
+2. `node tools/build-site.mjs` יוצר `_site/index.html` וקובץ `.nojekyll`.
+3. כל קובץ HTML בשורש כולל doctype, שפה, כיוון כתיבה, title ו־viewport.
+4. אין תווי Unicode פגומים, כתובות `file://` או נתיבים מקומיים של Windows.
+5. `git diff --check` אינו מדווח על שגיאות whitespace.
+6. קובץ הבית המוגדר ב־`site.config.json` קיים ונכלל בפרסום.
+7. תהליך GitHub Actions בשם `Deploy GitHub Pages` מסתיים בהצלחה לאחר push ל־`main`.
+
