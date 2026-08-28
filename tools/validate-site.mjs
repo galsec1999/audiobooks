@@ -85,6 +85,56 @@ for (const filename of htmlFiles) {
   validateHtml(filename, fs.readFileSync(path.join(root, filename), 'utf8'));
 }
 
+const homepageHtml = fs.existsSync(path.join(root, config.homepage ?? ''))
+  ? fs.readFileSync(path.join(root, config.homepage), 'utf8')
+  : '';
+function parseBookArray(name) {
+  const match = homepageHtml.match(new RegExp(`const ${name}=(\\[[\\s\\S]*?\\]);`));
+  if (!match) {
+    fail(`Missing ${name} data array.`);
+    return [];
+  }
+  try {
+    return JSON.parse(match[1]);
+  } catch (error) {
+    fail(`${name} is not valid JSON: ${error.message}`);
+    return [];
+  }
+}
+
+const originalBooks = parseBookArray('BOOKS');
+const importedBooks = parseBookArray('IMPORTED_BOOKS');
+const allBooks = [...originalBooks, ...importedBooks];
+const normalizedKeys = new Set();
+for (const book of allBooks) {
+  const key = `${book.title ?? ''}|${book.author ?? ''}`
+    .toLocaleLowerCase('en')
+    .normalize('NFKD')
+    .replace(/[^\p{L}\p{N}]+/gu, '');
+  if (!key) fail('A book is missing a usable title or author.');
+  else if (normalizedKeys.has(key)) fail(`Duplicate book detected: ${book.title} — ${book.author}.`);
+  else normalizedKeys.add(key);
+}
+if (originalBooks.length !== 185 || importedBooks.length !== 9 || allBooks.length !== 194) {
+  fail(`Unexpected catalog size: original=${originalBooks.length}, imported=${importedBooks.length}, total=${allBooks.length}.`);
+}
+for (const book of importedBooks) {
+  const asinPattern = /^(?:B[0-9A-Z]{9}|[0-9]{10})$/;
+  const expectedUrl = new RegExp(`^https://www\\.audible\\.com/pd/.+/${book.audible_asin}$`, 'i');
+  if (book.genre !== 'Self-Help' || !book.topic) fail(`Imported book has invalid genre/topic: ${book.title}.`);
+  if (book.audible_verified !== true || !asinPattern.test(book.audible_asin ?? '') || !expectedUrl.test(book.audible_url ?? '')) {
+    fail(`Imported book lacks a verified Audible identity: ${book.title}.`);
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(book.audible_release_date ?? '')
+      || !/^\d{4}-\d{2}-\d{2}$/.test(book.audible_verified_at ?? '')
+      || !book.narrator || !Number.isFinite(book.audible_runtime_minutes)) {
+    fail(`Imported book lacks verified audiobook metadata: ${book.title}.`);
+  }
+  if (book.sales != null || book.rating_avg != null || book.rating_count != null) {
+    fail(`Imported book contains unverified sales or rating data: ${book.title}.`);
+  }
+}
+
 for (const required of ['.nojekyll', 'robots.txt', 'AGENTS.md', 'README.md']) {
   if (!fs.existsSync(path.join(root, required))) fail(`Missing required file: ${required}`);
 }
