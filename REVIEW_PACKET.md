@@ -1,4 +1,4 @@
-# חבילת סקירה לפרויקט Audiobooks — גרסת מסמך 1.7.0
+# חבילת סקירה לפרויקט Audiobooks — גרסת מסמך 1.7.1
 
 ## מה הושלם
 
@@ -22,7 +22,7 @@
 
 - `node tools/validate-site.mjs`: עבר; אומת דף HTML אחד.
 - `node tools/build-site.mjs`: עבר; נוצר `_site/index.html`.
-- SHA-256 של `index.html` ושל `_site/index.html` זהה: `0214985E9EF11D95904269929D795E2A14DA9F295155F41F42141BE8BF4D8026`.
+- SHA-256 של `index.html` ושל `_site/index.html` זהה: `43EA2AB4AEF7C842434EC6171C6E47798DD0D5ECA76453829C34E53DB59E0C73`.
 - לא נמצאו analytics, trackers, טעינות צד שלישי, sitemap או תיקיית נושא.
 - GitHub Actions `Validate HTML pages`, ריצה `33188050532`: עבר בהצלחה.
 - GitHub Actions `Deploy GitHub Pages`, ריצה `33188050460`: עבר בהצלחה.
@@ -37,6 +37,9 @@
 - GitHub Actions `Validate HTML pages`, ריצה `33189024592`: עבר בהצלחה.
 - GitHub Actions `Deploy GitHub Pages`, ריצה `33189024612`: עבר בהצלחה.
 - באתר החי אומתו ניווט הז׳אנרים, שער משאב ארוך, היעדר Shorts/iframe והמשך חסימות הפרטיות.
+- GitHub Actions `Validate HTML pages`, ריצה `33189765048`: עבר בהצלחה.
+- GitHub Actions `Deploy GitHub Pages`, ריצה `33189765205`: עבר בהצלחה.
+- באתר החי אומתו שלושת המיונים החדשים, היעדר אפשרות מכירות קבועה, תג no-index ו־`robots.txt` החוסם את כל הסורקים.
 
 ## בעיות, מגבלות וסיכונים
 
