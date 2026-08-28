@@ -1,8 +1,8 @@
-# מצב פרויקט Audiobooks — גרסת מסמך 1.1.0
+# מצב פרויקט Audiobooks — גרסת מסמך 1.4.0
 
 - תאריך: 2026-08-28
-- שלב: המאגר הציבורי נוצר אך עדיין ריק; התשתית המקומית מוכנה עם כללי no-index וללא מעקב. נותר push ואימות הפרסום הראשון.
-- דף הבית: `modern_self_help_audiobooks_2026.html`.
+- שלב: אתר Audiobooks כללי בשורש מוכן; נותר push ואימות הפרסום הראשון.
+- דף הבית: `index.html`.
 - יעד GitHub: `galsec1999/audiobooks`.
 - יעד האתר: `https://galsec1999.github.io/audiobooks/`.
 - דפי HTML שנבדקו: 1.

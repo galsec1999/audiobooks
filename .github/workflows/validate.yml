@@ -29,8 +29,9 @@ jobs:
         run: node tools/build-site.mjs
 
       - name: Check generated homepage
-        run: test -s _site/index.html
+        run: |
+          test -s _site/index.html
+          test -s _site/robots.txt
 
       - name: Check whitespace errors
         run: git diff --check
-

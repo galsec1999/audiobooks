@@ -1,10 +1,10 @@
 # Audiobooks
 
-אתר One Page בעברית לאוסף ספרי שמע, המתפרסם אוטומטית באמצעות GitHub Pages ונועד לגישה בקישור ישיר בלבד.
+אתר One Page כללי בנושאי ספרי שמע, המתפרסם אוטומטית באמצעות GitHub Pages ונועד לגישה בקישור ישיר בלבד. קטגוריות נוספות יתווספו בעתיד בתוך אותו דף ואתר.
 
 - אתר: https://galsec1999.github.io/audiobooks/
 - מאגר: https://github.com/galsec1999/audiobooks
-- דף הבית במקור: `modern_self_help_audiobooks_2026.html`
+- דף הבית במקור: `index.html`
 
 ## עבודה מקומית
 
@@ -19,12 +19,12 @@ node tools/build-site.mjs
 
 ## הוספת דף HTML
 
-1. מוסיפים קובץ `*.html` לשורש הפרויקט.
+1. עורכים את `index.html` או מוסיפים קובץ `*.html` לשורש הפרויקט.
 2. שומרים HTML מלא, UTF-8, עברית ו־RTL, title ו־viewport.
 3. מריצים את שתי הפקודות שלעיל.
 4. מבצעים commit ודוחפים ל־`main`.
 
-אם הדף החדש צריך להפוך לדף הבית, מעדכנים רק את `homepage` בתוך `site.config.json`.
+דף הבית נשאר `index.html`. קטגוריות עתידיות יתווספו בתוך אותו דף/אתר, ללא יצירת אתר נפרד.
 
 כל דף חייב לכלול `noindex,nofollow`. אין להוסיף analytics, trackers או sitemap. קובץ `robots.txt` חוסם סורקים, אך אינו מונע מאדם שקיבל את הקישור לפתוח או לשתף אותו.
 

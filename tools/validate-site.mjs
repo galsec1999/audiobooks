@@ -17,23 +17,7 @@ if (!fs.existsSync(configPath)) {
 }
 
 const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-const htmlFiles = fs.readdirSync(root, { withFileTypes: true })
-  .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith('.html'))
-  .map((entry) => entry.name)
-  .sort((a, b) => a.localeCompare(b, 'en'));
-
-if (!config.homepage || typeof config.homepage !== 'string') {
-  fail('site.config.json must define a homepage string.');
-} else if (!htmlFiles.includes(config.homepage)) {
-  fail(`Configured homepage does not exist: ${config.homepage}`);
-}
-
-if (htmlFiles.length === 0) {
-  fail('At least one HTML file is required in the project root.');
-}
-
-for (const filename of htmlFiles) {
-  const html = fs.readFileSync(path.join(root, filename), 'utf8');
+function validateHtml(filename, html) {
   const prefix = `${filename}:`;
 
   if (!/^\s*<!doctype html>/i.test(html)) fail(`${prefix} missing HTML5 doctype.`);
@@ -50,6 +34,37 @@ for (const filename of htmlFiles) {
   if (html.includes('\uFFFD')) fail(`${prefix} contains Unicode replacement characters.`);
   if (/\bfile:\/\//i.test(html)) fail(`${prefix} contains a file:// URL.`);
   if (/["'(]\\?[A-Za-z]:\\/.test(html)) fail(`${prefix} contains a local Windows path.`);
+  if (/<script\b[^>]*\bsrc\s*=/i.test(html)) fail(`${prefix} loads an external script.`);
+  if (/(?:src|poster)\s*=\s*["']https?:\/\//i.test(html)) fail(`${prefix} loads an external media resource.`);
+  if (/url\(\s*["']?https?:\/\//i.test(html) || /@import\s+url/i.test(html)) {
+    fail(`${prefix} loads an external stylesheet resource.`);
+  }
+  if (/google-analytics|googletagmanager|\bgtag\s*\(|segment\.com|mixpanel|hotjar|clarity\.ms|connect\.facebook|facebook\.net|matomo|plausible|umami/i.test(html)) {
+    fail(`${prefix} contains an analytics or tracking integration.`);
+  }
+}
+
+const htmlFiles = fs.readdirSync(root, { withFileTypes: true })
+  .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith('.html'))
+  .map((entry) => entry.name)
+  .sort((a, b) => a.localeCompare(b, 'en'));
+
+if (!config.homepage || typeof config.homepage !== 'string') {
+  fail('site.config.json must define a homepage string.');
+} else if (!htmlFiles.includes(config.homepage)) {
+  fail(`Configured homepage does not exist: ${config.homepage}`);
+}
+
+if (config.homepage !== 'index.html') {
+  fail('The root Audiobooks site must use index.html as its homepage.');
+}
+
+if (htmlFiles.length === 0) {
+  fail('At least one HTML file is required in the project root.');
+}
+
+for (const filename of htmlFiles) {
+  validateHtml(filename, fs.readFileSync(path.join(root, filename), 'utf8'));
 }
 
 for (const required of ['.nojekyll', 'robots.txt', 'AGENTS.md', 'README.md']) {
@@ -63,8 +78,18 @@ if (!/^User-agent:\s*\*\s*\r?\nDisallow:\s*\/\s*$/im.test(robots.trim())) {
   fail('robots.txt must block all crawlers with User-agent: * and Disallow: /.');
 }
 
-const sitemapFiles = fs.readdirSync(root, { withFileTypes: true })
-  .filter((entry) => entry.isFile() && /^sitemap(?:\.|$)/i.test(entry.name));
+function findSitemaps(directory) {
+  const found = [];
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    if (entry.name === '.git' || entry.name === '_site') continue;
+    const entryPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) found.push(...findSitemaps(entryPath));
+    else if (/^sitemap(?:\.|$)/i.test(entry.name)) found.push(entryPath);
+  }
+  return found;
+}
+
+const sitemapFiles = findSitemaps(root);
 if (sitemapFiles.length > 0) fail('Sitemap files are not allowed for this link-only site.');
 
 if (failures.length > 0) {
