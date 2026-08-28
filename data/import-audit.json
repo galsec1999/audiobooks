@@ -1,0 +1,2601 @@
+{
+  "source": "self_help_audiobooks_500_additional.csv",
+  "verified_at": "2026-08-28",
+  "candidate_rows": 500,
+  "original_catalog_rows": 185,
+  "imported_rows": 414,
+  "rejected_rows": 86,
+  "rejection_reasons": {
+    "no_strict_audible_match": 86
+  },
+  "imported": [
+    {
+      "title": "Getting Things Done",
+      "author": "David Allen",
+      "asin": "B0FDQYZQG4"
+    },
+    {
+      "title": "Ready for Anything",
+      "author": "David Allen",
+      "asin": "B002V0QX7G"
+    },
+    {
+      "title": "Making It All Work",
+      "author": "David Allen",
+      "asin": "B002V1BLQ8"
+    },
+    {
+      "title": "The Organized Mind",
+      "author": "Daniel J. Levitin",
+      "asin": "B00MH4FT0I"
+    },
+    {
+      "title": "Smarter Faster Better",
+      "author": "Charles Duhigg",
+      "asin": "B017WRZO9U"
+    },
+    {
+      "title": "The Checklist Manifesto",
+      "author": "Atul Gawande",
+      "asin": "1782835946"
+    },
+    {
+      "title": "The Procrastination Equation",
+      "author": "Piers Steel",
+      "asin": "B004H2OW0Q"
+    },
+    {
+      "title": "Finish",
+      "author": "Jon Acuff",
+      "asin": "B074P9BDLL"
+    },
+    {
+      "title": "All It Takes Is a Goal",
+      "author": "Jon Acuff",
+      "asin": "B0C5B24HS5"
+    },
+    {
+      "title": "Start",
+      "author": "Jon Acuff",
+      "asin": "B00COOJ0HO"
+    },
+    {
+      "title": "Do Over",
+      "author": "Jon Acuff",
+      "asin": "B00VL0V3AO"
+    },
+    {
+      "title": "The Motivation Myth",
+      "author": "Jeff Haden",
+      "asin": "B078KNWTHK"
+    },
+    {
+      "title": "The Productivity Project",
+      "author": "Chris Bailey",
+      "asin": "B0BZFF9CDZ"
+    },
+    {
+      "title": "How to Calm Your Mind",
+      "author": "Chris Bailey",
+      "asin": "B09XBX1SBH"
+    },
+    {
+      "title": "The Lazy Genius Way",
+      "author": "Kendra Adachi & Emily P. Freeman - introduction",
+      "asin": "059320767X"
+    },
+    {
+      "title": "The PLAN",
+      "author": "Kendra Adachi",
+      "asin": "B0CTNLKDYJ"
+    },
+    {
+      "title": "Tranquility by Tuesday",
+      "author": "Laura Vanderkam",
+      "asin": "B09S5GX8G8"
+    },
+    {
+      "title": "168 Hours",
+      "author": "Laura Vanderkam",
+      "asin": "B003S88TE0"
+    },
+    {
+      "title": "I Know How She Does It",
+      "author": "Laura Vanderkam",
+      "asin": "B00X4A137M"
+    },
+    {
+      "title": "Off the Clock",
+      "author": "Laura Vanderkam",
+      "asin": "B07D7FVW9L"
+    },
+    {
+      "title": "Free to Focus",
+      "author": "Michael Hyatt",
+      "asin": "1545911010"
+    },
+    {
+      "title": "Your Best Year Ever",
+      "author": "Michael Hyatt",
+      "asin": "B0C9S8LJ86"
+    },
+    {
+      "title": "The Compound Effect",
+      "author": "Darren Hardy",
+      "asin": "1982648066"
+    },
+    {
+      "title": "The Entrepreneur Roller Coaster",
+      "author": "Darren Hardy",
+      "asin": "1982647965"
+    },
+    {
+      "title": "The Power of Full Engagement",
+      "author": "Jim Loehr & Tony Schwartz",
+      "asin": "B002UZMVM8"
+    },
+    {
+      "title": "The Way We're Working Isn't Working",
+      "author": "Tony Schwartz & Jean Gomes",
+      "asin": "B003MU7P6W"
+    },
+    {
+      "title": "The Progress Principle",
+      "author": "Teresa Amabile & Steven Kramer",
+      "asin": "B0BSMRDFGR"
+    },
+    {
+      "title": "Rest",
+      "author": "Alex Soojung-Kim Pang",
+      "asin": "B077DR1CX5"
+    },
+    {
+      "title": "Shorter",
+      "author": "Alex Soojung-Kim Pang",
+      "asin": "0241989981"
+    },
+    {
+      "title": "Drive",
+      "author": "Daniel H. Pink",
+      "asin": "B002ZF14MG"
+    },
+    {
+      "title": "When",
+      "author": "Daniel H. Pink",
+      "asin": "B0765CNMW4"
+    },
+    {
+      "title": "The Power of Regret",
+      "author": "Daniel H. Pink",
+      "asin": "0593555570"
+    },
+    {
+      "title": "To Sell Is Human",
+      "author": "Daniel H. Pink",
+      "asin": "B00AEB3052"
+    },
+    {
+      "title": "The Bullet Journal Method",
+      "author": "Ryder Carroll",
+      "asin": "0525642293"
+    },
+    {
+      "title": "How to be a Productivity Ninja",
+      "author": "Graham Allcott",
+      "asin": "B01MQWDQXE"
+    },
+    {
+      "title": "The Art of Impossible",
+      "author": "Steven Kotler",
+      "asin": "0062977547"
+    },
+    {
+      "title": "Stealing Fire",
+      "author": "Steven Kotler & Jamie Wheal",
+      "asin": "B01MSMZKM5"
+    },
+    {
+      "title": "Decoding Greatness",
+      "author": "Ron Friedman",
+      "asin": "1797125109"
+    },
+    {
+      "title": "The Best Place to Work",
+      "author": "Ron Friedman",
+      "asin": "B00PX8EBFY"
+    },
+    {
+      "title": "Peak Performance",
+      "author": "Brad Stulberg & Steve Magness",
+      "asin": "B0DM7192H4"
+    },
+    {
+      "title": "The Passion Paradox",
+      "author": "Brad Stulberg & Steve Magness",
+      "asin": "B0F22FYXBK"
+    },
+    {
+      "title": "Master of Change",
+      "author": "Brad Stulberg",
+      "asin": "B0BSVNPHCL"
+    },
+    {
+      "title": "The Practice of Groundedness",
+      "author": "Brad Stulberg",
+      "asin": "0593456246"
+    },
+    {
+      "title": "Do Hard Things",
+      "author": "Steve Magness",
+      "asin": "B09JYDKRNW"
+    },
+    {
+      "title": "Endure",
+      "author": "Alexander Hutchinson",
+      "asin": "B078PTZT4Q"
+    },
+    {
+      "title": "The Brave Athlete",
+      "author": "Simon Marshall PhD & Lesley Paterson",
+      "asin": "B0773RMWLK"
+    },
+    {
+      "title": "Peak Mind",
+      "author": "Amishi P. Jha",
+      "asin": "0062992171"
+    },
+    {
+      "title": "The Mindful Athlete",
+      "author": "George Mumford & Phil Jackson - introduction",
+      "asin": "B01BLQPS4E"
+    },
+    {
+      "title": "Legacy",
+      "author": "James Kerr",
+      "asin": "B0CP4RDJ4G"
+    },
+    {
+      "title": "Relentless",
+      "author": "Tim S. Grover & Shari Lesser Wenk",
+      "asin": "1797121766"
+    },
+    {
+      "title": "So Good They Can't Ignore You",
+      "author": "Cal Newport",
+      "asin": "B01LZ5KC7W"
+    },
+    {
+      "title": "A World Without Email",
+      "author": "Cal Newport",
+      "asin": "0525643575"
+    },
+    {
+      "title": "How to Become a Straight-A Student",
+      "author": "Cal Newport",
+      "asin": "B07M92PN2J"
+    },
+    {
+      "title": "The First 20 Hours",
+      "author": "Josh Kaufman",
+      "asin": "B00D2661LG"
+    },
+    {
+      "title": "The 80/20 Principle",
+      "author": "Richard Koch",
+      "asin": "B00O9GSWRE"
+    },
+    {
+      "title": "The 80/20 Manager",
+      "author": "Richard Koch",
+      "asin": "B00KRHCCFM"
+    },
+    {
+      "title": "Unreasonable Success and How to Achieve It",
+      "author": "Richard Koch",
+      "asin": "1405542659"
+    },
+    {
+      "title": "One Small Step Can Change Your Life",
+      "author": "Dr. Robert Maurer",
+      "asin": "B00NOBNJ0K"
+    },
+    {
+      "title": "Mini Habits",
+      "author": "Stephen Guise",
+      "asin": "B00JEGQ12C"
+    },
+    {
+      "title": "Elastic Habits",
+      "author": "Stephen Guise",
+      "asin": "B082VLQCDS"
+    },
+    {
+      "title": "The Slight Edge",
+      "author": "Jeff Olson",
+      "asin": "B0C1CV7B7M"
+    },
+    {
+      "title": "The Success Principles",
+      "author": "Jack Canfield & Janet Switzer",
+      "asin": "B0FL2MJP1W"
+    },
+    {
+      "title": "The New One Minute Manager",
+      "author": "Ken Blanchard & Spencer Johnson",
+      "asin": "B00UX8MICW"
+    },
+    {
+      "title": "The 8th Habit",
+      "author": "Stephen R. Covey",
+      "asin": "B002V57Z14"
+    },
+    {
+      "title": "The 3rd Alternative",
+      "author": "Stephen R. Covey",
+      "asin": "B0073KYRAE"
+    },
+    {
+      "title": "The Speed of Trust",
+      "author": "Stephen M.R. Covey",
+      "asin": "B002UZDYJ2"
+    },
+    {
+      "title": "Smart Trust",
+      "author": "Greg Link & Rebecca R. Merrill & Stephen M.R. Covey",
+      "asin": "B006P47O6I"
+    },
+    {
+      "title": "Trust and Inspire",
+      "author": "Stephen M.R. Covey",
+      "asin": "1797136062"
+    },
+    {
+      "title": "The 4 Disciplines of Execution",
+      "author": "Sean Covey & Chris McChesney & Jim Huling",
+      "asin": "B00DD0846Q"
+    },
+    {
+      "title": "How Will You Measure Your Life?",
+      "author": "Clayton M. Christensen & James Allworth & Karen Dillon",
+      "asin": "B00839289G"
+    },
+    {
+      "title": "The Innovator's Dilemma",
+      "author": "Clayton M. Christensen",
+      "asin": "B004AA4U9I"
+    },
+    {
+      "title": "The Innovator's Solution",
+      "author": "Clayton M. Christensen & Michael E. Raynor",
+      "asin": "B002V0M6D6"
+    },
+    {
+      "title": "Competing Against Luck",
+      "author": "Clayton M. Christensen & Taddy Hall & Karen Dillon & David S. Duncan",
+      "asin": "B01IIB5OTO"
+    },
+    {
+      "title": "Measure What Matters",
+      "author": "John Doerr & Larry Page - introduction",
+      "asin": "B07BMHFBCM"
+    },
+    {
+      "title": "Speed & Scale",
+      "author": "John Doerr",
+      "asin": "B09G831GD3"
+    },
+    {
+      "title": "Principles",
+      "author": "Ray Dalio",
+      "asin": "B074B29GQJ"
+    },
+    {
+      "title": "The Score Takes Care of Itself",
+      "author": "Bill Walsh & Steve Jamison & Craig Walsh & Joe Montana - introduction",
+      "asin": "B0H279CBNR"
+    },
+    {
+      "title": "No Rules Rules",
+      "author": "Reed Hastings & Erin Meyer",
+      "asin": "1984891170"
+    },
+    {
+      "title": "The Alliance",
+      "author": "Reid Hoffman & Ben Casnocha & Chris Yeh",
+      "asin": "B00LFS7MFM"
+    },
+    {
+      "title": "Blitzscaling",
+      "author": "Reid Hoffman & Chris Yeh & Bill Gates - introduction",
+      "asin": "B07DJZB9YN"
+    },
+    {
+      "title": "Masters of Scale",
+      "author": "Reid Hoffman & June Cohen & Deron Triff",
+      "asin": "0593451317"
+    },
+    {
+      "title": "The Third Door",
+      "author": "Alex Banayan",
+      "asin": "B07D92D7KJ"
+    },
+    {
+      "title": "Tools of Titans",
+      "author": "Tim Ferriss",
+      "asin": "B082VK6Q8G"
+    },
+    {
+      "title": "Tribe of Mentors",
+      "author": "Tim Ferriss",
+      "asin": "B082VK89T8"
+    },
+    {
+      "title": "The 4-Hour Body",
+      "author": "Timothy Ferriss",
+      "asin": "B004CNGLYA"
+    },
+    {
+      "title": "Life Is in the Transitions",
+      "author": "Bruce Feiler",
+      "asin": "0593211375"
+    },
+    {
+      "title": "The Search",
+      "author": "Bruce Feiler",
+      "asin": "B0BKTSH2W1"
+    },
+    {
+      "title": "Range",
+      "author": "David Epstein",
+      "asin": "1984888439"
+    },
+    {
+      "title": "The Sports Gene",
+      "author": "David Epstein",
+      "asin": "B00P2VA7KK"
+    },
+    {
+      "title": "Late Bloomers",
+      "author": "Rich Karlgaard",
+      "asin": "1984829416"
+    },
+    {
+      "title": "Barking up the Wrong Tree",
+      "author": "Eric Barker",
+      "asin": "B06XY7T9JT"
+    },
+    {
+      "title": "Plays Well with Others",
+      "author": "Eric Barker",
+      "asin": "B09CW92ZHP"
+    },
+    {
+      "title": "The Pathless Path",
+      "author": "Paul Millerd",
+      "asin": "B0B6GRHZNM"
+    },
+    {
+      "title": "Act Like a Leader, Think Like a Leader",
+      "author": "Herminia Ibarra",
+      "asin": "B0BWK8M27H"
+    },
+    {
+      "title": "The Squiggly Career",
+      "author": "Helen Tupper & Sarah Ellis",
+      "asin": "0241989906"
+    },
+    {
+      "title": "You Coach You",
+      "author": "Helen Tupper & Sarah Ellis",
+      "asin": "0241554853"
+    },
+    {
+      "title": "The Long Game",
+      "author": "Dorie Clark",
+      "asin": "B09FN93HZM"
+    },
+    {
+      "title": "Reinventing You",
+      "author": "Dorie Clark",
+      "asin": "B00C313QVY"
+    },
+    {
+      "title": "Entrepreneurial You",
+      "author": "Dorie Clark",
+      "asin": "B077DW4Q65"
+    },
+    {
+      "title": "The Portfolio Life",
+      "author": "Christina Wallace",
+      "asin": "B0BW133SD1"
+    },
+    {
+      "title": "Pivot",
+      "author": "Jenny Blake",
+      "asin": "B01KIPHEPA"
+    },
+    {
+      "title": "Quit",
+      "author": "Annie Duke",
+      "asin": "B09PVQ429T"
+    },
+    {
+      "title": "How to Decide",
+      "author": "Annie Duke",
+      "asin": "0593345320"
+    },
+    {
+      "title": "The Art of Thinking Clearly",
+      "author": "Rolf Dobelli",
+      "asin": "B00CICE248"
+    },
+    {
+      "title": "The Art of the Good Life",
+      "author": "Rolf Dobelli",
+      "asin": "B076XDRXL3"
+    },
+    {
+      "title": "Stop Reading the News",
+      "author": "Rolf Dobelli & Caroline Waight - translator",
+      "asin": "1529342708"
+    },
+    {
+      "title": "Mindset",
+      "author": "Carol S. Dweck",
+      "asin": "0593150422"
+    },
+    {
+      "title": "Why We Meditate",
+      "author": "Daniel Goleman & Tsoknyi Rinpoche",
+      "asin": "B09V39SQJH"
+    },
+    {
+      "title": "The Molecule of More",
+      "author": "Daniel Z. Lieberman MD & Michael E. Long",
+      "asin": "B07HRYH8QZ"
+    },
+    {
+      "title": "The Neuroscience of You",
+      "author": "Chantel Prat",
+      "asin": "B09MH3JRF4"
+    },
+    {
+      "title": "Livewired",
+      "author": "David Eagleman",
+      "asin": "0553550977"
+    },
+    {
+      "title": "The Brain",
+      "author": "David Eagleman",
+      "asin": "B014L8EO3A"
+    },
+    {
+      "title": "Incognito",
+      "author": "David Eagleman",
+      "asin": "B0052NTSY4"
+    },
+    {
+      "title": "The Brain That Changes Itself",
+      "author": "Norman Doidge M.D.",
+      "asin": "0593293983"
+    },
+    {
+      "title": "The Brain's Way of Healing",
+      "author": "Norman Doidge M.D. & Norman Doidge - introduction",
+      "asin": "B00RC4MPOQ"
+    },
+    {
+      "title": "Rewire Your Anxious Brain",
+      "author": "Catherine M. Pittman PhD & Elizabeth M. Karle MLIS",
+      "asin": "B0G452P1CP"
+    },
+    {
+      "title": "Flourish",
+      "author": "Martin E. P. Seligman",
+      "asin": "B004QXR9RE"
+    },
+    {
+      "title": "Authentic Happiness",
+      "author": "Martin E. P. Seligman",
+      "asin": "B002V1A4IY"
+    },
+    {
+      "title": "The Happiness Advantage",
+      "author": "Shawn Achor",
+      "asin": "B0041NZRDC"
+    },
+    {
+      "title": "Before Happiness",
+      "author": "Shawn Achor",
+      "asin": "B00EAFWSUQ"
+    },
+    {
+      "title": "Big Potential",
+      "author": "Shawn Achor",
+      "asin": "B076B2DTZ6"
+    },
+    {
+      "title": "Broadcasting Happiness",
+      "author": "Michelle Gielan",
+      "asin": "B014E90F9S"
+    },
+    {
+      "title": "The Happiness Track",
+      "author": "Emma Seppala",
+      "asin": "B0176ZA074"
+    },
+    {
+      "title": "Happier Hour",
+      "author": "Cassie Holmes",
+      "asin": "B09TWYQ28X"
+    },
+    {
+      "title": "The How of Happiness",
+      "author": "Sonja Lyubomirsky",
+      "asin": "B0C5JV29MJ"
+    },
+    {
+      "title": "The Myths of Happiness",
+      "author": "Sonja Lyubomirsky",
+      "asin": "B00AWEDMRM"
+    },
+    {
+      "title": "Happiness by Design",
+      "author": "Paul Dolan & Daniel Kahneman - introduction",
+      "asin": "B00MI4EASY"
+    },
+    {
+      "title": "The Righteous Mind",
+      "author": "Jonathan Haidt",
+      "asin": "B008O8964Q"
+    },
+    {
+      "title": "The Coddling of the American Mind",
+      "author": "Greg Lukianoff & Jonathan Haidt",
+      "asin": "B079P6VFH1"
+    },
+    {
+      "title": "The Scout Mindset",
+      "author": "Julia Galef",
+      "asin": "1984887467"
+    },
+    {
+      "title": "Rationality",
+      "author": "Steven Pinker",
+      "asin": "1984843559"
+    },
+    {
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "asin": "B005TKKCWC"
+    },
+    {
+      "title": "Noise",
+      "author": "Daniel Kahneman & Olivier Sibony & Cass R. Sunstein",
+      "asin": "1984832069"
+    },
+    {
+      "title": "Nudge",
+      "author": "Richard H. Thaler & Cass R. Sunstein",
+      "asin": "B002V8L28I"
+    },
+    {
+      "title": "Misbehaving",
+      "author": "Richard H. Thaler",
+      "asin": "B00VQTE4OC"
+    },
+    {
+      "title": "Predictably Irrational",
+      "author": "Dan Ariely",
+      "asin": "B002V0GCE0"
+    },
+    {
+      "title": "The Upside of Irrationality",
+      "author": "Dan Ariely",
+      "asin": "B003NTYKGA"
+    },
+    {
+      "title": "The Honest Truth About Dishonesty",
+      "author": "Dan Ariely",
+      "asin": "B0085WEDNU"
+    },
+    {
+      "title": "Payoff",
+      "author": "Dan Ariely",
+      "asin": "B01M7XCSD3"
+    },
+    {
+      "title": "The Paradox of Choice",
+      "author": "Barry Schwartz",
+      "asin": "B003YM0QJQ"
+    },
+    {
+      "title": "Practical Wisdom",
+      "author": "Barry Schwartz & Kenneth Sharpe",
+      "asin": "B004GA3NJK"
+    },
+    {
+      "title": "Decisive",
+      "author": "Chip Heath & Dan Heath",
+      "asin": "B00B3YV3Z8"
+    },
+    {
+      "title": "Switch",
+      "author": "Chip Heath & Dan Heath",
+      "asin": "B0035C6SMO"
+    },
+    {
+      "title": "Made to Stick",
+      "author": "Chip Heath & Dan Heath",
+      "asin": "B002V0QVY6"
+    },
+    {
+      "title": "Upstream",
+      "author": "Dan Heath",
+      "asin": "1797100564"
+    },
+    {
+      "title": "The Power of Bad",
+      "author": "John Tierney & Roy F. Baumeister",
+      "asin": "0593107322"
+    },
+    {
+      "title": "Willpower",
+      "author": "Roy F. Baumeister & John Tierney",
+      "asin": "059321613X"
+    },
+    {
+      "title": "The Marshmallow Test",
+      "author": "Walter Mischel",
+      "asin": "B00N9E4YWY"
+    },
+    {
+      "title": "The Willpower Instinct",
+      "author": "Kelly McGonigal PhD",
+      "asin": "0593162943"
+    },
+    {
+      "title": "The Joy of Movement",
+      "author": "Kelly McGonigal PhD",
+      "asin": "0593151453"
+    },
+    {
+      "title": "Supernormal",
+      "author": "Meg Jay",
+      "asin": "B0766554N4"
+    },
+    {
+      "title": "The Twentysomething Treatment",
+      "author": "Meg Jay",
+      "asin": "B0CYMDCS2N"
+    },
+    {
+      "title": "The Reality Slap",
+      "author": "Russ Harris",
+      "asin": "B09YMZNNVP"
+    },
+    {
+      "title": "A Liberated Mind",
+      "author": "Steven C. Hayes PhD",
+      "asin": "0525640738"
+    },
+    {
+      "title": "The Confidence Game",
+      "author": "Maria Konnikova",
+      "asin": "B01AASV8WA"
+    },
+    {
+      "title": "The Biggest Bluff",
+      "author": "Maria Konnikova",
+      "asin": "0593288920"
+    },
+    {
+      "title": "The Power of Meaning",
+      "author": "Emily Esfahani Smith",
+      "asin": "B01N59UEAJ"
+    },
+    {
+      "title": "The Art of Stillness",
+      "author": "Pico Iyer",
+      "asin": "B00OI04FVS"
+    },
+    {
+      "title": "The Book of Joy",
+      "author": "Dalai Lama & Desmond Tutu & Douglas Carlton Abrams",
+      "asin": "B01IQ15URC"
+    },
+    {
+      "title": "The Book of Hope",
+      "author": "Jane Goodall & Douglas Abrams",
+      "asin": "1250810663"
+    },
+    {
+      "title": "Build the Life You Want",
+      "author": "Arthur C. Brooks & Oprah Winfrey",
+      "asin": "B0C4VK7FFY"
+    },
+    {
+      "title": "The Second Mountain",
+      "author": "David Brooks",
+      "asin": "1984840770"
+    },
+    {
+      "title": "The Road to Character",
+      "author": "David Brooks",
+      "asin": "B00V3YCBVI"
+    },
+    {
+      "title": "The Social Animal",
+      "author": "David Brooks",
+      "asin": "B004NEKPK4"
+    },
+    {
+      "title": "The Gifts of Imperfection",
+      "author": "Brené Brown",
+      "asin": "1473588731"
+    },
+    {
+      "title": "Braving the Wilderness",
+      "author": "Brené Brown",
+      "asin": "B074G5S1DY"
+    },
+    {
+      "title": "I Thought It Was Just Me (but it isn’t)",
+      "author": "Brené Brown",
+      "asin": "B004GEHVEY"
+    },
+    {
+      "title": "The Power of Vulnerability",
+      "author": "Brené Brown PhD LMSW",
+      "asin": "B00CYKDYBQ"
+    },
+    {
+      "title": "Option B",
+      "author": "Sheryl Sandberg & Adam Grant",
+      "asin": "B06WRSP9B1"
+    },
+    {
+      "title": "Originals",
+      "author": "Adam Grant & Sheryl Sandberg - introduction",
+      "asin": "B01A7Q6672"
+    },
+    {
+      "title": "Give and Take",
+      "author": "Adam Grant",
+      "asin": "B00BMBWNEW"
+    },
+    {
+      "title": "The Sweet Spot",
+      "author": "Christine Carter Ph.D.",
+      "asin": "B00RC65E4W"
+    },
+    {
+      "title": "The Power of Fun",
+      "author": "Catherine Price",
+      "asin": "0593452925"
+    },
+    {
+      "title": "How to Break Up With Your Phone",
+      "author": "Catherine Price",
+      "asin": "B0784TC4HZ"
+    },
+    {
+      "title": "The Antidote",
+      "author": "Oliver Burkeman",
+      "asin": "1473576261"
+    },
+    {
+      "title": "Meditations for Mortals",
+      "author": "Oliver Burkeman",
+      "asin": "B0CW4ST43L"
+    },
+    {
+      "title": "The Confidence Code",
+      "author": "Katty Kay & Claire Shipman",
+      "asin": "B00IA38RCM"
+    },
+    {
+      "title": "The Art of Possibility",
+      "author": "Rosamund Stone Zander & Benjamin Zander",
+      "asin": "B004GMOPFO"
+    },
+    {
+      "title": "Scarcity",
+      "author": "Sendhil Mullainathan & Eldar Shafir",
+      "asin": "B00ED21KAU"
+    },
+    {
+      "title": "The Plateau Effect",
+      "author": "Bob Sullivan & Hugh Thompson",
+      "asin": "B00CDVXFDS"
+    },
+    {
+      "title": "The Science of Stuck",
+      "author": "Britt Frank LSCSW & Sasha Heinz - introduction",
+      "asin": "0593508351"
+    },
+    {
+      "title": "The Status Game",
+      "author": "Will Storr",
+      "asin": "0008354669"
+    },
+    {
+      "title": "Selfie",
+      "author": "Will Storr",
+      "asin": "B071CV5JVM"
+    },
+    {
+      "title": "The Social Leap",
+      "author": "William von Hippel",
+      "asin": "0062866745"
+    },
+    {
+      "title": "The Intelligence Trap",
+      "author": "David Robson",
+      "asin": "B07KW45DWN"
+    },
+    {
+      "title": "The Laws of Connection",
+      "author": "David Robson",
+      "asin": "B0CTD1LHB4"
+    },
+    {
+      "title": "The Art of Insubordination",
+      "author": "Todd B. Kashdan",
+      "asin": "0593505085"
+    },
+    {
+      "title": "Curious?",
+      "author": "Todd Kashdan",
+      "asin": "B002V1O3JU"
+    },
+    {
+      "title": "Hardwiring Happiness",
+      "author": "Rick Hanson PhD",
+      "asin": "B00EZ5NS28"
+    },
+    {
+      "title": "Resilient",
+      "author": "Rick Hanson PhD & Forrest Hanson",
+      "asin": "B079T5ZYBY"
+    },
+    {
+      "title": "Making Great Relationships",
+      "author": "Rick Hanson PhD",
+      "asin": "B09YK7LWL2"
+    },
+    {
+      "title": "The Like Switch",
+      "author": "Jack Schafer & Marvin Karlins Ph.D. Ph.D.",
+      "asin": "B00RKRDOM2"
+    },
+    {
+      "title": "What Every BODY Is Saying",
+      "author": "Joe Navarro & Marvin Karlins",
+      "asin": "B006ZAR44Y"
+    },
+    {
+      "title": "The Dictionary of Body Language",
+      "author": "Joe Navarro",
+      "asin": "0062969137"
+    },
+    {
+      "title": "Be Exceptional",
+      "author": "Joe Navarro & Toni Sciarra Poynter",
+      "asin": "0063025418"
+    },
+    {
+      "title": "Surrounded by Psychopaths",
+      "author": "Thomas Erikson",
+      "asin": "1250772559"
+    },
+    {
+      "title": "The Art of Communicating",
+      "author": "Thich Nhat Hanh",
+      "asin": "B00E65MCUG"
+    },
+    {
+      "title": "Forest Bathing",
+      "author": "Qing Li",
+      "asin": "B07BTGNSNG"
+    },
+    {
+      "title": "The Nature Fix",
+      "author": "Florence Williams",
+      "asin": "B01MS8GQNG"
+    },
+    {
+      "title": "52 Ways to Walk",
+      "author": "Annabel Abbs-Streets",
+      "asin": "059355244X"
+    },
+    {
+      "title": "Nonviolent Communication",
+      "author": "PhD Marshall Rosenberg",
+      "asin": "B00TJJNSQG"
+    },
+    {
+      "title": "Say What You Mean",
+      "author": "Oren Jay Sofer & Joseph Goldstein - introduction",
+      "asin": "059310692X"
+    },
+    {
+      "title": "We Need to Talk",
+      "author": "Celeste Headlee",
+      "asin": "B073ZLCVV3"
+    },
+    {
+      "title": "You're Not Listening",
+      "author": "Kate Murphy",
+      "asin": "1250263727"
+    },
+    {
+      "title": "Difficult Conversations",
+      "author": "Douglas Stone & Bruce Patton & Sheila Heen & Roger Fisher - introduction",
+      "asin": "B0C78VF9T6"
+    },
+    {
+      "title": "Thanks for the Feedback",
+      "author": "Douglas Stone & Sheila Heen",
+      "asin": "B00ICV09IW"
+    },
+    {
+      "title": "Just Listen",
+      "author": "Mark Goulston",
+      "asin": "1400223709"
+    },
+    {
+      "title": "Talking to Crazy",
+      "author": "Mark Goulston MD",
+      "asin": "B014GCH3DE"
+    },
+    {
+      "title": "Real Influence",
+      "author": "Mark Goulston & John Ullmen",
+      "asin": "140022361X"
+    },
+    {
+      "title": "Never Eat Alone",
+      "author": "Keith Ferrazzi & Tahl Raz",
+      "asin": "B09YDLGDPG"
+    },
+    {
+      "title": "Who's Got Your Back",
+      "author": "Keith Ferrazzi",
+      "asin": "B002V8KV9O"
+    },
+    {
+      "title": "Leading Without Authority",
+      "author": "Keith Ferrazzi & Noel Weyrich",
+      "asin": "0593149807"
+    },
+    {
+      "title": "Leading from Anywhere",
+      "author": "David Burkus",
+      "asin": "0358573807"
+    },
+    {
+      "title": "Under New Management",
+      "author": "David Burkus",
+      "asin": "B01CIR380G"
+    },
+    {
+      "title": "Best Team Ever",
+      "author": "David Burkus",
+      "asin": "B0CJG2WKMS"
+    },
+    {
+      "title": "The Art of People",
+      "author": "Dave Kerpen",
+      "asin": "B01C7MTJ1Y"
+    },
+    {
+      "title": "How to Know a Person",
+      "author": "David Brooks",
+      "asin": "B0BXFPF388"
+    },
+    {
+      "title": "Platonic",
+      "author": "Marisa G. Franco PhD",
+      "asin": "B09SNCGZ66"
+    },
+    {
+      "title": "Friendship",
+      "author": "Lydia Denworth",
+      "asin": "100401502X"
+    },
+    {
+      "title": "The Other Significant Others",
+      "author": "Rhaina Cohen",
+      "asin": "B0C3NDXH81"
+    },
+    {
+      "title": "Big Friendship",
+      "author": "Aminatou Sow & Ann Friedman",
+      "asin": "1797107119"
+    },
+    {
+      "title": "Text Me When You Get Home",
+      "author": "Kayleen Schaefer",
+      "asin": "B078RSN98C"
+    },
+    {
+      "title": "Friendships Don't Just Happen!",
+      "author": "Shasta Nelson",
+      "asin": "B07DWBB859"
+    },
+    {
+      "title": "Frientimacy",
+      "author": "Shasta Nelson",
+      "asin": "B01IFX4R6G"
+    },
+    {
+      "title": "The Business of Friendship",
+      "author": "Shasta Nelson",
+      "asin": "1400216982"
+    },
+    {
+      "title": "All About Love",
+      "author": "bell hooks",
+      "asin": "B0CL1GKWC7"
+    },
+    {
+      "title": "Communion",
+      "author": "bell hooks",
+      "asin": "B0F863FWGC"
+    },
+    {
+      "title": "How to Be Love(d)",
+      "author": "Humble the Poet",
+      "asin": "B0BPVPWPQZ"
+    },
+    {
+      "title": "Single on Purpose",
+      "author": "John Kim",
+      "asin": "0062980769"
+    },
+    {
+      "title": "Break Up On Purpose",
+      "author": "John Kim",
+      "asin": "B0D2FTYK2F"
+    },
+    {
+      "title": "It's Not Me, It's You",
+      "author": "John Kim & Vanessa Bennett",
+      "asin": "B09NF7BLLX"
+    },
+    {
+      "title": "Anxiously Attached",
+      "author": "Jessica Baum LMHC",
+      "asin": "B09HRB988S"
+    },
+    {
+      "title": "Secure Love",
+      "author": "Julie Menanno",
+      "asin": "B0C94W4F56"
+    },
+    {
+      "title": "Polysecure",
+      "author": "Jessica Fern & Eve Rickert & Nora Samaran",
+      "asin": "B0F1VQGNDC"
+    },
+    {
+      "title": "Polywise",
+      "author": "Jessica Fern & David Cooley - contributor & Carrie Jenkins",
+      "asin": "B0F3Y1RBD4"
+    },
+    {
+      "title": "Wired for Love",
+      "author": "Stan Tatkin PsyD MFT",
+      "asin": "B016WTDRKM"
+    },
+    {
+      "title": "Wired for Dating",
+      "author": "Stan Tatkin PsyD MFT",
+      "asin": "B01B8IRYGA"
+    },
+    {
+      "title": "We Do",
+      "author": "Stan Tatkin PsyD MFT",
+      "asin": "1977343031"
+    },
+    {
+      "title": "In Each Other's Care",
+      "author": "PsyD MFT Stan Tatkin & Lin Chen",
+      "asin": "B0C1LHCYWT"
+    },
+    {
+      "title": "The Seven Principles for Making Marriage Work",
+      "author": "John M. Gottman PhD & Nan Silver",
+      "asin": "1515948269"
+    },
+    {
+      "title": "What Makes Love Last?",
+      "author": "Nan Silver & John M. Gottman",
+      "asin": "B0092SFSR6"
+    },
+    {
+      "title": "Fight Right",
+      "author": "Julie Schwartz Gottman PhD & John Gottman PhD",
+      "asin": "B0C4VWH9HR"
+    },
+    {
+      "title": "Ten Lessons to Transform Your Marriage",
+      "author": "John Gottman PhD & Julie Schwartz Gottman PhD & Joan DeClaire",
+      "asin": "B002V1CNTW"
+    },
+    {
+      "title": "And Baby Makes Three",
+      "author": "John M. Gottman PhD & Julie Schwartz Gottman PhD",
+      "asin": "B0722XKY66"
+    },
+    {
+      "title": "The Love Prescription",
+      "author": "John Gottman PhD & Julie Schwartz Gottman PhD",
+      "asin": "B09S4T4C94"
+    },
+    {
+      "title": "Mating in Captivity",
+      "author": "Esther Perel",
+      "asin": "B0G1MPVR16"
+    },
+    {
+      "title": "The State of Affairs",
+      "author": "Esther Perel",
+      "asin": "B072WBLT3K"
+    },
+    {
+      "title": "She Comes First",
+      "author": "Ian Kerner",
+      "asin": "B002VACEJ2"
+    },
+    {
+      "title": "Magnificent Sex",
+      "author": "Peggy J. Kleinplatz PhD & A. Dana Ménard PhD",
+      "asin": "B09KTKVG7Y"
+    },
+    {
+      "title": "Marriageology",
+      "author": "Belinda Luscombe",
+      "asin": "0525634509"
+    },
+    {
+      "title": "The Rough Patch",
+      "author": "Daphne de Marneffe PhD PhD",
+      "asin": "B077SV9W1V"
+    },
+    {
+      "title": "The All-or-Nothing Marriage",
+      "author": "Eli J Finkel",
+      "asin": "B075DKPW6Q"
+    },
+    {
+      "title": "The New Rules of Marriage",
+      "author": "Terrence Real",
+      "asin": "B002V8HEXA"
+    },
+    {
+      "title": "Us",
+      "author": "Terrence Real",
+      "asin": "0593507126"
+    },
+    {
+      "title": "How Can I Get Through To You?",
+      "author": "Terrence Real",
+      "asin": "B002UZN514"
+    },
+    {
+      "title": "Modern Romance",
+      "author": "Aziz Ansari & Eric Klinenberg",
+      "asin": "B00UKEQK82"
+    },
+    {
+      "title": "Awkward",
+      "author": "Ty Tashiro",
+      "asin": "B06XD8XCS9"
+    },
+    {
+      "title": "Sorry I'm Late, I Didn't Want to Come",
+      "author": "Jessica Pan",
+      "asin": "1473571324"
+    },
+    {
+      "title": "Managing for People Who Hate Managing",
+      "author": "Devora Zack",
+      "asin": "B00A0VF8H4"
+    },
+    {
+      "title": "Good to Great",
+      "author": "Jim Collins",
+      "asin": "B003UDDK7O"
+    },
+    {
+      "title": "Great by Choice",
+      "author": "Jim Collins & Morten T. Hansen",
+      "asin": "B005QDNUL2"
+    },
+    {
+      "title": "How the Mighty Fall",
+      "author": "Jim Collins",
+      "asin": "B002V8N7S6"
+    },
+    {
+      "title": "Turning the Flywheel",
+      "author": "Jim Collins",
+      "asin": "0062933817"
+    },
+    {
+      "title": "Great at Work",
+      "author": "Morten T. Hansen",
+      "asin": "B077H53D75"
+    },
+    {
+      "title": "The Outsiders",
+      "author": "William N. Thorndike",
+      "asin": "B00F3HYIB2"
+    },
+    {
+      "title": "The Hard Thing About Hard Things",
+      "author": "Ben Horowitz",
+      "asin": "B00I0AJC2Y"
+    },
+    {
+      "title": "What You Do Is Who You Are",
+      "author": "Ben Horowitz",
+      "asin": "0062967584"
+    },
+    {
+      "title": "The Cold Start Problem",
+      "author": "Andrew Chen",
+      "asin": "0062969765"
+    },
+    {
+      "title": "The Power Law",
+      "author": "Sebastian Mallaby",
+      "asin": "0525637710"
+    },
+    {
+      "title": "Amp It Up",
+      "author": "Frank Slootman",
+      "asin": "B09QBTJZJL"
+    },
+    {
+      "title": "The Five Dysfunctions of a Team",
+      "author": "Patrick Lencioni & Patrick Lencioni - introduction",
+      "asin": "B002V08E64"
+    },
+    {
+      "title": "Death by Meeting",
+      "author": "Patrick Lencioni",
+      "asin": "B002V0QNS0"
+    },
+    {
+      "title": "The Advantage",
+      "author": "Patrick Lencioni",
+      "asin": "B007JWQ254"
+    },
+    {
+      "title": "The Motive",
+      "author": "Patrick M. Lencioni",
+      "asin": "198007108X"
+    },
+    {
+      "title": "Silos, Politics, and Turf Wars",
+      "author": "Patrick Lencioni",
+      "asin": "B002V0QFH4"
+    },
+    {
+      "title": "The 6 Types of Working Genius",
+      "author": "Patrick M. Lencioni",
+      "asin": "B0B75NWHRN"
+    },
+    {
+      "title": "Getting Naked",
+      "author": "Patrick Lencioni",
+      "asin": "B0036YP64M"
+    },
+    {
+      "title": "The Three Signs of a Miserable Job",
+      "author": "Patrick Lencioni",
+      "asin": "B002VAA9US"
+    },
+    {
+      "title": "Overcoming the Five Dysfunctions of a Team",
+      "author": "Patrick Lencioni",
+      "asin": "B002V1A05Q"
+    },
+    {
+      "title": "Impact Players",
+      "author": "Liz Wiseman",
+      "asin": "0063063344"
+    },
+    {
+      "title": "Rookie Smarts",
+      "author": "Liz Wiseman",
+      "asin": "B00NBCCQPG"
+    },
+    {
+      "title": "Call Sign Chaos",
+      "author": "Jim Mattis & Bing West",
+      "asin": "0735288496"
+    },
+    {
+      "title": "It's Your Ship",
+      "author": "D. Michael Abrashoff",
+      "asin": "B009K9YNI2"
+    },
+    {
+      "title": "Leadership Is Language",
+      "author": "L. David Marquet",
+      "asin": "1984842005"
+    },
+    {
+      "title": "The Manager's Path",
+      "author": "Camille Fournier",
+      "asin": "1452652171"
+    },
+    {
+      "title": "The Making of a Manager",
+      "author": "Julie Zhuo",
+      "asin": "0525642218"
+    },
+    {
+      "title": "The Pursuit of Excellence",
+      "author": "Ryan Hawk & Patrick Lencioni - foreword",
+      "asin": "B09Q7ZZBBN"
+    },
+    {
+      "title": "The CEO Next Door",
+      "author": "Elena L. Botelho & Kim R. Powell & Tahl Raz",
+      "asin": "B079SMFNM5"
+    },
+    {
+      "title": "Trillion Dollar Coach",
+      "author": "Eric Schmidt & Jonathan Rosenberg & Alan Eagle",
+      "asin": "0062839276"
+    },
+    {
+      "title": "Work Rules!",
+      "author": "Laszlo Bock",
+      "asin": "B00TZ3C6A0"
+    },
+    {
+      "title": "Nine Lies About Work",
+      "author": "Marcus Buckingham & Ashley Goodall",
+      "asin": "1469074087"
+    },
+    {
+      "title": "Love + Work",
+      "author": "Marcus Buckingham",
+      "asin": "B09WZ92ZRX"
+    },
+    {
+      "title": "Go Put Your Strengths to Work",
+      "author": "Marcus Buckingham",
+      "asin": "B002V5D2M0"
+    },
+    {
+      "title": "Are You Fully Charged?",
+      "author": "Tom Rath",
+      "asin": "B00WHF4UKM"
+    },
+    {
+      "title": "Eat Move Sleep",
+      "author": "Tom Rath",
+      "asin": "B00FGADU56"
+    },
+    {
+      "title": "The Carpenter",
+      "author": "Jon Gordon",
+      "asin": "B00KY66UZY"
+    },
+    {
+      "title": "The Power of Positive Leadership",
+      "author": "Jon Gordon",
+      "asin": "B0722SFSHS"
+    },
+    {
+      "title": "The Power of a Positive Team",
+      "author": "Jon Gordon",
+      "asin": "B07QD32X1F"
+    },
+    {
+      "title": "You Win in the Locker Room First",
+      "author": "Jon Gordon & Mike Smith",
+      "asin": "B01CK694A8"
+    },
+    {
+      "title": "Row the Boat",
+      "author": "Jon Gordon & P. J. Fleck",
+      "asin": "B0D9HPCWWS"
+    },
+    {
+      "title": "The Go-Giver",
+      "author": "Bob Burg & John David Mann",
+      "asin": "B09MKSZMX9"
+    },
+    {
+      "title": "Go-Givers Sell More",
+      "author": "Bob Burg & John David Mann",
+      "asin": "B09MKX4SK1"
+    },
+    {
+      "title": "The Go-Giver Leader",
+      "author": "Bob Burg & John David Mann",
+      "asin": "B01C37TWEW"
+    },
+    {
+      "title": "The Referral Engine",
+      "author": "John Jantsch",
+      "asin": "B003NTXU34"
+    },
+    {
+      "title": "The Self-Reliant Entrepreneur",
+      "author": "John Jantsch",
+      "asin": "1469077876"
+    },
+    {
+      "title": "The Ultimate Marketing Engine",
+      "author": "John Jantsch",
+      "asin": "1400224799"
+    },
+    {
+      "title": "The Pumpkin Plan",
+      "author": "Mike Michalowicz",
+      "asin": "0593215001"
+    },
+    {
+      "title": "Fix This Next",
+      "author": "Mike Michalowicz",
+      "asin": "0593164997"
+    },
+    {
+      "title": "Get Different",
+      "author": "Mike Michalowicz",
+      "asin": "0593456327"
+    },
+    {
+      "title": "All In",
+      "author": "Mike Michalowicz",
+      "asin": "B0C4C4796Y"
+    },
+    {
+      "title": "The Toilet Paper Entrepreneur",
+      "author": "Mike Michalowicz",
+      "asin": "B00FKCI3I4"
+    },
+    {
+      "title": "Surge",
+      "author": "Mike Michalowicz",
+      "asin": "B01EQQ868G"
+    },
+    {
+      "title": "The E-Myth Enterprise",
+      "author": "Michael E. Gerber",
+      "asin": "B002V1AH2W"
+    },
+    {
+      "title": "Built to Sell",
+      "author": "John Warrillow",
+      "asin": "B0050DLDEE"
+    },
+    {
+      "title": "The Automatic Customer",
+      "author": "John Warrillow",
+      "asin": "B09RG39H29"
+    },
+    {
+      "title": "The Art of Selling Your Business",
+      "author": "John Warrillow",
+      "asin": "1663711607"
+    },
+    {
+      "title": "Company of One",
+      "author": "Paul Jarvis",
+      "asin": "B07KFN2255"
+    },
+    {
+      "title": "Rework",
+      "author": "Jason Fried & David Heinemeier Hansson",
+      "asin": "B0036FLXLQ"
+    },
+    {
+      "title": "Remote",
+      "author": "Jason Fried & David Heinemeier Hansson",
+      "asin": "B00DJ5W592"
+    },
+    {
+      "title": "It Doesn't Have to Be Crazy at Work",
+      "author": "Jason Fried & David Heinemeier Hansson",
+      "asin": "0062877089"
+    },
+    {
+      "title": "The Minimalist Entrepreneur",
+      "author": "Sahil Lavingia",
+      "asin": "0593457080"
+    },
+    {
+      "title": "Anything You Want",
+      "author": "Derek Sivers",
+      "asin": "B0CVNNHTQ8"
+    },
+    {
+      "title": "Your Music and People",
+      "author": "Derek Sivers",
+      "asin": "B0B2KMZT8X"
+    },
+    {
+      "title": "The Almanack of Naval Ravikant",
+      "author": "Eric Jorgenson & Naval Ravikant & Tim Ferriss - introduction",
+      "asin": "B0FBCP1JWJ"
+    },
+    {
+      "title": "How to Get Rich",
+      "author": "Felix Dennis",
+      "asin": "0593345525"
+    },
+    {
+      "title": "The $100 Startup",
+      "author": "Chris Guillebeau",
+      "asin": "B008165WSK"
+    },
+    {
+      "title": "Side Hustle",
+      "author": "Chris Guillebeau",
+      "asin": "B074GBFFJD"
+    },
+    {
+      "title": "The Money Tree",
+      "author": "Chris Guillebeau",
+      "asin": "0593210573"
+    },
+    {
+      "title": "Crush It!",
+      "author": "Gary Vaynerchuk",
+      "asin": "B0032G7016"
+    },
+    {
+      "title": "The Thank You Economy",
+      "author": "Gary Vaynerchuk",
+      "asin": "B0057IU7IA"
+    },
+    {
+      "title": "Jab, Jab, Jab, Right Hook",
+      "author": "Gary Vaynerchuk",
+      "asin": "B0BZS2H6YD"
+    },
+    {
+      "title": "#AskGaryVee",
+      "author": "Gary Vaynerchuk",
+      "asin": "B01A5UKXGA"
+    },
+    {
+      "title": "Crushing It!",
+      "author": "Gary Vaynerchuk",
+      "asin": "B0783R9DPV"
+    },
+    {
+      "title": "Day Trading Attention",
+      "author": "Gary Vaynerchuk",
+      "asin": "B0CLLLG4M3"
+    },
+    {
+      "title": "If You're Not First, You're Last",
+      "author": "Grant Cardone",
+      "asin": "B00769VW8M"
+    },
+    {
+      "title": "The Millionaire Booklet",
+      "author": "Grant Cardone",
+      "asin": "B01IRUA88I"
+    },
+    {
+      "title": "Sales EQ",
+      "author": "Jeb Blount & Anthony Iannarino (Foreword By) - introduction",
+      "asin": "B0DTB3VN19"
+    },
+    {
+      "title": "Objections",
+      "author": "Jeb Blount & Mark Hunter - Foreword",
+      "asin": "1469070995"
+    },
+    {
+      "title": "Inked",
+      "author": "Jeb Blount",
+      "asin": "1469077450"
+    },
+    {
+      "title": "Virtual Selling",
+      "author": "Jeb Blount",
+      "asin": "1469082535"
+    },
+    {
+      "title": "People Follow You",
+      "author": "Jeb Blount",
+      "asin": "1663708010"
+    },
+    {
+      "title": "People Buy You",
+      "author": "Jeb Blount",
+      "asin": "1469083736"
+    },
+    {
+      "title": "The Challenger Sale",
+      "author": "Matthew Dixon & Brent Adamson",
+      "asin": "0593163141"
+    },
+    {
+      "title": "The Challenger Customer",
+      "author": "Brent Adamson & Matthew Dixon & Pat Spenner & Nick Toman",
+      "asin": "B013FARBV2"
+    },
+    {
+      "title": "The JOLT Effect",
+      "author": "Matthew Dixon & Ted McKenna",
+      "asin": "B09S271H9H"
+    },
+    {
+      "title": "New Sales. Simplified.",
+      "author": "Mike Weinberg",
+      "asin": "1400225450"
+    },
+    {
+      "title": "Sales Management. Simplified",
+      "author": "Mike Weinberg",
+      "asin": "B012BS8QTA"
+    },
+    {
+      "title": "Sales Truth",
+      "author": "Mike Weinberg & Anthony Iannarino - introduction",
+      "asin": "1400215994"
+    },
+    {
+      "title": "Eat Their Lunch",
+      "author": "Anthony Iannarino",
+      "asin": "0525641971"
+    },
+    {
+      "title": "The Only Sales Guide You'll Ever Need",
+      "author": "Anthony Iannarino",
+      "asin": "B01LY3YD8Q"
+    },
+    {
+      "title": "Elite Sales Strategies",
+      "author": "Anthony Iannarino",
+      "asin": "B09XY41R68"
+    },
+    {
+      "title": "Change Anything",
+      "author": "Kerry Patterson & Joseph Grenny & David Maxfield & Ron McMillan & Al Switzler",
+      "asin": "B00633NZSC"
+    },
+    {
+      "title": "Execution",
+      "author": "Larry Bossidy & Ram Charan",
+      "asin": "B002UUFTUO"
+    },
+    {
+      "title": "Working Backwards",
+      "author": "Colin Bryar & Bill Carr",
+      "asin": "1250788048"
+    },
+    {
+      "title": "The Bezos Letters",
+      "author": "Steve Anderson & Karen Anderson",
+      "asin": "B07WBX3W2Q"
+    },
+    {
+      "title": "Amazon Unbound",
+      "author": "Brad Stone & Brad Stone - introduction",
+      "asin": "1797129848"
+    },
+    {
+      "title": "The Nvidia Way",
+      "author": "Tae Kim",
+      "asin": "B0DNRNV83B"
+    },
+    {
+      "title": "Play Nice But Win",
+      "author": "Michael Dell & James Kaplan",
+      "asin": "0593457064"
+    },
+    {
+      "title": "Baby Steps Millionaires",
+      "author": "Dave Ramsey",
+      "asin": "B09P8WD9HX"
+    },
+    {
+      "title": "Smart Money Smart Kids",
+      "author": "Dave Ramsey & Rachel Cruze",
+      "asin": "B00JH1UUV2"
+    },
+    {
+      "title": "Know Yourself, Know Your Money",
+      "author": "Rachel Cruze",
+      "asin": "B08S3CN5WD"
+    },
+    {
+      "title": "Love Your Life, Not Theirs",
+      "author": "Rachel Cruze",
+      "asin": "B01M0HUKC7"
+    },
+    {
+      "title": "Money: Master the Game",
+      "author": "Tony Robbins",
+      "asin": "B00OPAR4MI"
+    },
+    {
+      "title": "The Holy Grail of Investing",
+      "author": "Tony Robbins & Christopher Zook",
+      "asin": "B0CCB2LL7D"
+    },
+    {
+      "title": "Life Force",
+      "author": "Tony Robbins & Peter H. Diamandis & Robert Hariri",
+      "asin": "B09DTM7NYG"
+    },
+    {
+      "title": "The Automatic Millionaire",
+      "author": "David Bach",
+      "asin": "B002UZKJ04"
+    },
+    {
+      "title": "Smart Couples Finish Rich",
+      "author": "David Bach",
+      "asin": "B002V01H5Y"
+    },
+    {
+      "title": "Start Late, Finish Rich",
+      "author": "David Bach",
+      "asin": "B002V8KVSU"
+    },
+    {
+      "title": "The Latte Factor",
+      "author": "David Bach & John David Mann",
+      "asin": "B07MNHKG8N"
+    },
+    {
+      "title": "The Little Book of Common Sense Investing",
+      "author": "John C. Bogle",
+      "asin": "B002V01EQQ"
+    },
+    {
+      "title": "Enough",
+      "author": "John C. Bogle",
+      "asin": "B002V8N7X6"
+    },
+    {
+      "title": "The Clash of the Cultures",
+      "author": "John C. Bogle & Arthur Levitt - foreword",
+      "asin": "1469075474"
+    },
+    {
+      "title": "Stay the Course",
+      "author": "John C. Bogle",
+      "asin": "1980035261"
+    },
+    {
+      "title": "The Four Pillars of Investing",
+      "author": "William J. Bernstein",
+      "asin": "1639299130"
+    },
+    {
+      "title": "The One-Page Financial Plan",
+      "author": "Carl Richards",
+      "asin": "B00UVSZRJU"
+    },
+    {
+      "title": "The Index Card",
+      "author": "Helaine Olen & Harold Pollack",
+      "asin": "B0195BK88S"
+    },
+    {
+      "title": "Broke Millennial",
+      "author": "Erin Lowry",
+      "asin": "B0CVBWPXMF"
+    },
+    {
+      "title": "Broke Millennial Takes On Investing",
+      "author": "Erin Lowry",
+      "asin": "1984843001"
+    },
+    {
+      "title": "Broke Millennial Talks Money",
+      "author": "Erin Lowry",
+      "asin": "0593290038"
+    },
+    {
+      "title": "The Financial Diet",
+      "author": "Chelsea Fagan & Lauren Ver Hage - designer",
+      "asin": "B078PQKFDV"
+    },
+    {
+      "title": "Clever Girl Finance",
+      "author": "Bola Sokunbi",
+      "asin": "1469075172"
+    },
+    {
+      "title": "Choosing to Prosper",
+      "author": "Bola Sokunbi",
+      "asin": "B0B195ZWD9"
+    },
+    {
+      "title": "We Should All Be Millionaires",
+      "author": "Rachel Rodgers",
+      "asin": "1400221641"
+    },
+    {
+      "title": "Get Rich, Lucky Bitch!",
+      "author": "Denise Duffield-Thomas",
+      "asin": "B07C7Y2K4R"
+    },
+    {
+      "title": "Chill and Prosper",
+      "author": "Denise Duffield-Thomas",
+      "asin": "B0B4BF2SVV"
+    },
+    {
+      "title": "You Are a Badass at Making Money",
+      "author": "Jen Sincero",
+      "asin": "B01N9EC5T7"
+    },
+    {
+      "title": "Badass Habits",
+      "author": "Jen Sincero",
+      "asin": "1984886169"
+    },
+    {
+      "title": "The Soul of Money",
+      "author": "Lynne Twist",
+      "asin": "B00CJ0DSVC"
+    },
+    {
+      "title": "Money, A Love Story",
+      "author": "Kate Northrup",
+      "asin": "B01IIDBD06"
+    },
+    {
+      "title": "Worth It",
+      "author": "Amanda Steinberg",
+      "asin": "B01MU9FCOR"
+    },
+    {
+      "title": "The Year of Less",
+      "author": "Cait Flanders",
+      "asin": "B078J2B6MT"
+    },
+    {
+      "title": "Meet the Frugalwoods",
+      "author": "Elizabeth Willard Thames",
+      "asin": "B0797F57JK"
+    },
+    {
+      "title": "How Not to Die",
+      "author": "Michael Greger & Gene Stone",
+      "asin": "B075LTQ5JK"
+    },
+    {
+      "title": "How Not to Diet",
+      "author": "M.D. FACLM Michael Greger",
+      "asin": "1250240581"
+    },
+    {
+      "title": "How Not to Age",
+      "author": "M.D. FACLM Michael Greger",
+      "asin": "B09Q7W1S5L"
+    },
+    {
+      "title": "The Blue Zones",
+      "author": "Dan Buettner",
+      "asin": "B004GF47OU"
+    },
+    {
+      "title": "The Blue Zones Solution",
+      "author": "Dan Buettner",
+      "asin": "B00UXZIH20"
+    },
+    {
+      "title": "The Blue Zones of Happiness",
+      "author": "Dan Buettner & Ed Diener",
+      "asin": "B075Y42LM6"
+    },
+    {
+      "title": "Thrive",
+      "author": "Arianna Huffington",
+      "asin": "B00HUW3DTQ"
+    },
+    {
+      "title": "The Sleep Revolution",
+      "author": "Arianna Huffington",
+      "asin": "B017WT0AK6"
+    },
+    {
+      "title": "The Telomere Effect",
+      "author": "Elizabeth Blackburn & Elissa Epel",
+      "asin": "B01N04WDJA"
+    },
+    {
+      "title": "The Stress Prescription",
+      "author": "Elissa Epel PhD",
+      "asin": "B09X9G14GQ"
+    },
+    {
+      "title": "Sleep Smarter",
+      "author": "Shawn Stevenson & Sara Gottfried MD - foreword",
+      "asin": "B01J4BK4MY"
+    },
+    {
+      "title": "Beyond Training",
+      "author": "Ben Greenfield",
+      "asin": "B015OLF7OI"
+    },
+    {
+      "title": "Lifespan",
+      "author": "David Sinclair & Matthew D. LaPlante",
+      "asin": "1508296057"
+    },
+    {
+      "title": "Ageless",
+      "author": "Andrew Steele",
+      "asin": "0593212568"
+    },
+    {
+      "title": "Young Forever",
+      "author": "Dr Mark Hyman",
+      "asin": "B0BND2BPZG"
+    },
+    {
+      "title": "Food Fix",
+      "author": "Dr Mark Hyman",
+      "asin": "1529389631"
+    },
+    {
+      "title": "The Pegan Diet",
+      "author": "Dr Mark Hyman",
+      "asin": "1529341337"
+    },
+    {
+      "title": "Eat Fat Get Thin",
+      "author": "Dr Mark Hyman",
+      "asin": "1529309980"
+    },
+    {
+      "title": "The Blood Sugar Solution 10-Day Detox Diet",
+      "author": "Dr Mark Hyman",
+      "asin": "1529315999"
+    },
+    {
+      "title": "Metabolical",
+      "author": "Robert H. Lustig",
+      "asin": "0063027755"
+    },
+    {
+      "title": "Fat Chance",
+      "author": "Robert H. Lustig",
+      "asin": "B00ANR44WK"
+    },
+    {
+      "title": "Why We Get Sick",
+      "author": "Benjamin Bikman PhD",
+      "asin": "1799933296"
+    }
+  ],
+  "rejected": [
+    {
+      "row": 13,
+      "title": "Quitter",
+      "author": "Jon Acuff",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 25,
+      "title": "Full Focus",
+      "author": "Michael Hyatt",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 38,
+      "title": "The Joy of Missing Out",
+      "author": "Tonya Dalton",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 41,
+      "title": "The Rise of Superman",
+      "author": "Steven Kotler",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 51,
+      "title": "How Bad Do You Want It?",
+      "author": "Matt Fitzgerald",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 56,
+      "title": "The Champion's Mind",
+      "author": "Jim Afremow",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 61,
+      "title": "How to Win at College",
+      "author": "Cal Newport",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 64,
+      "title": "Living the 80/20 Way",
+      "author": "Richard Koch",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 67,
+      "title": "The Practicing Mind",
+      "author": "Thomas M. Sterner",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 68,
+      "title": "Fully Engaged",
+      "author": "Thomas M. Sterner",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 88,
+      "title": "Principles for Dealing with the Changing World Order",
+      "author": "Ray Dalio",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 90,
+      "title": "The Culture Map",
+      "author": "Erin Meyer",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 94,
+      "title": "The Startup of You",
+      "author": "Reid Hoffman and Ben Casnocha",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 102,
+      "title": "Designing Your Work Life",
+      "author": "Bill Burnett and Dave Evans",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 109,
+      "title": "Working Identity",
+      "author": "Herminia Ibarra",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 115,
+      "title": "Stand Out",
+      "author": "Dorie Clark",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 125,
+      "title": "Social Intelligence",
+      "author": "Daniel Goleman",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 126,
+      "title": "Altered Traits",
+      "author": "Daniel Goleman and Richard J. Davidson",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 128,
+      "title": "The Emotional Life of Your Brain",
+      "author": "Richard J. Davidson and Sharon Begley",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 136,
+      "title": "The Upward Spiral",
+      "author": "Alex Korb",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 138,
+      "title": "Undoing Depression",
+      "author": "Richard O'Connor",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 140,
+      "title": "The Hope Circuit",
+      "author": "Martin E. P. Seligman",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 147,
+      "title": "The Joy Choice",
+      "author": "Michelle Segar",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 152,
+      "title": "The Happiness Hypothesis",
+      "author": "Jonathan Haidt",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 167,
+      "title": "Why We Work",
+      "author": "Barry Schwartz",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 168,
+      "title": "The Art of Choosing",
+      "author": "Sheena Iyengar",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 178,
+      "title": "The Defining Decade",
+      "author": "Meg Jay",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 181,
+      "title": "The Confidence Gap",
+      "author": "Russ Harris",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 184,
+      "title": "Get Out of Your Mind and Into Your Life",
+      "author": "Steven C. Hayes",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 187,
+      "title": "Mastermind",
+      "author": "Maria Konnikova",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 193,
+      "title": "Love Your Enemies",
+      "author": "Arthur C. Brooks",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 219,
+      "title": "The Upside of Your Dark Side",
+      "author": "Todd Kashdan and Robert Biswas-Diener",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 222,
+      "title": "The Courage Quotient",
+      "author": "Robert Biswas-Diener",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 230,
+      "title": "Surrounded by Idiots",
+      "author": "Thomas Erikson",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 232,
+      "title": "Surrounded by Bad Bosses",
+      "author": "Thomas Erikson",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 233,
+      "title": "The Communication Book",
+      "author": "Mikael Krogerus and Roman Tschäppeler",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 237,
+      "title": "In Praise of Walking",
+      "author": "Shane O'Mara",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 251,
+      "title": "Competing in the New World of Work",
+      "author": "Keith Ferrazzi, Kian Gohar and Noel Weyrich",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 252,
+      "title": "Friend of a Friend",
+      "author": "David Burkus",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 266,
+      "title": "Friendfluence",
+      "author": "Carlin Flora",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 282,
+      "title": "The Relationship Cure",
+      "author": "John Gottman and Joan DeClaire",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 286,
+      "title": "The Man's Guide to Women",
+      "author": "John Gottman, Julie Schwartz Gottman, Doug Abrams and Rachel Carlton Abrams",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 289,
+      "title": "Created for Connection",
+      "author": "Sue Johnson and Kenneth Sanderfer",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 290,
+      "title": "Love Sense",
+      "author": "Sue Johnson",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 293,
+      "title": "Where Should We Begin?",
+      "author": "Esther Perel",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 294,
+      "title": "Tell Me About the Last Time You Had Sex",
+      "author": "Ian Kerner",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 296,
+      "title": "Better Sex Through Mindfulness",
+      "author": "Lori A. Brotto",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 298,
+      "title": "The New I Do",
+      "author": "Susan Pease Gadoua and Vicki Larson",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 304,
+      "title": "Fierce Intimacy",
+      "author": "Terrence Real",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 307,
+      "title": "The Science of Happily Ever After",
+      "author": "Ty Tashiro",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 310,
+      "title": "Networking for People Who Hate Networking",
+      "author": "Devora Zack",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 315,
+      "title": "Beyond Entrepreneurship 2.0",
+      "author": "Jim Collins and Bill Lazier",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 318,
+      "title": "Collaboration",
+      "author": "Morten T. Hansen",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 330,
+      "title": "The Truth About Employee Engagement",
+      "author": "Patrick Lencioni",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 335,
+      "title": "Multipliers",
+      "author": "Liz Wiseman",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 338,
+      "title": "The Wisdom of the Bullfrog",
+      "author": "William H. McRaven",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 339,
+      "title": "Sea Stories",
+      "author": "William H. McRaven",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 345,
+      "title": "Welcome to Management",
+      "author": "Ryan Hawk",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 349,
+      "title": "Powerful",
+      "author": "Patty McCord",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 353,
+      "title": "StandOut 2.0",
+      "author": "Marcus Buckingham",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 354,
+      "title": "First, Break All the Rules",
+      "author": "Marcus Buckingham and Curt Coffman",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 355,
+      "title": "Now, Discover Your Strengths",
+      "author": "Marcus Buckingham and Donald O. Clifton",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 357,
+      "title": "Strengths Based Leadership",
+      "author": "Tom Rath and Barry Conchie",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 358,
+      "title": "StrengthsFinder 2.0",
+      "author": "Tom Rath",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 361,
+      "title": "Wellbeing",
+      "author": "Tom Rath and Jim Harter",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 370,
+      "title": "Endless Referrals",
+      "author": "Bob Burg",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 371,
+      "title": "Duct Tape Marketing",
+      "author": "John Jantsch",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 376,
+      "title": "Clockwork",
+      "author": "Mike Michalowicz",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 404,
+      "title": "The 10X Rule",
+      "author": "Grant Cardone",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 405,
+      "title": "Sell or Be Sold",
+      "author": "Grant Cardone",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 414,
+      "title": "Gap Selling",
+      "author": "Keenan",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 424,
+      "title": "The Lost Art of Closing",
+      "author": "Anthony Iannarino",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 429,
+      "title": "The Everything Store",
+      "author": "Brad Stone",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 433,
+      "title": "Shoe Dog",
+      "author": "Phil Knight",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 434,
+      "title": "Delivering Happiness",
+      "author": "Tony Hsieh",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 435,
+      "title": "Losing My Virginity",
+      "author": "Richard Branson",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 436,
+      "title": "Finding My Virginity",
+      "author": "Richard Branson",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 437,
+      "title": "The Total Money Makeover",
+      "author": "Dave Ramsey",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 439,
+      "title": "The Money Answer Book",
+      "author": "Dave Ramsey",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 444,
+      "title": "Unshakeable",
+      "author": "Tony Robbins and Peter Mallouk",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 456,
+      "title": "The Investor's Manifesto",
+      "author": "William J. Bernstein",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 457,
+      "title": "The Behavior Gap",
+      "author": "Carl Richards",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 465,
+      "title": "Clever Girl Finance: Learn How Investing Works",
+      "author": "Bola Sokunbi",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 488,
+      "title": "Eat Smarter",
+      "author": "Shawn Stevenson",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 489,
+      "title": "Boundless",
+      "author": "Ben Greenfield",
+      "reason": "no_strict_audible_match"
+    },
+    {
+      "row": 493,
+      "title": "The Longevity Diet",
+      "author": "Valter Longo",
+      "reason": "no_strict_audible_match"
+    }
+  ]
+}

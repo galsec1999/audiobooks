@@ -105,6 +105,13 @@ function parseBookArray(name) {
 const originalBooks = parseBookArray('BOOKS');
 const importedBooks = parseBookArray('IMPORTED_BOOKS');
 const allBooks = [...originalBooks, ...importedBooks];
+const importAuditPath = path.join(root, 'data', 'import-audit.json');
+let importAudit = null;
+try {
+  importAudit = JSON.parse(fs.readFileSync(importAuditPath, 'utf8'));
+} catch (error) {
+  fail(`Missing or invalid import audit: ${error.message}`);
+}
 const normalizedKeys = new Set();
 for (const book of allBooks) {
   const key = `${book.title ?? ''}|${book.author ?? ''}`
@@ -115,12 +122,15 @@ for (const book of allBooks) {
   else if (normalizedKeys.has(key)) fail(`Duplicate book detected: ${book.title} — ${book.author}.`);
   else normalizedKeys.add(key);
 }
-if (originalBooks.length !== 185 || importedBooks.length !== 9 || allBooks.length !== 194) {
+if (originalBooks.length !== 185
+    || importedBooks.length !== importAudit?.imported_rows
+    || allBooks.length !== 185 + (importAudit?.imported_rows ?? 0)
+    || (importAudit?.imported_rows ?? 0) + (importAudit?.rejected_rows ?? 0) !== importAudit?.candidate_rows) {
   fail(`Unexpected catalog size: original=${originalBooks.length}, imported=${importedBooks.length}, total=${allBooks.length}.`);
 }
 for (const book of importedBooks) {
-  const asinPattern = /^(?:B[0-9A-Z]{9}|[0-9]{10})$/;
-  const expectedUrl = new RegExp(`^https://www\\.audible\\.com/pd/.+/${book.audible_asin}$`, 'i');
+  const asinPattern = /^(?:B[0-9A-Z]{9}|[0-9]{9}[0-9X])$/;
+  const expectedUrl = new RegExp(`^https://www\\.audible\\.com/pd/(?:.+/)?${book.audible_asin}$`, 'i');
   if (book.genre !== 'Self-Help' || !book.topic) fail(`Imported book has invalid genre/topic: ${book.title}.`);
   if (book.audible_verified !== true || !asinPattern.test(book.audible_asin ?? '') || !expectedUrl.test(book.audible_url ?? '')) {
     fail(`Imported book lacks a verified Audible identity: ${book.title}.`);
@@ -135,7 +145,7 @@ for (const book of importedBooks) {
   }
 }
 
-for (const required of ['.nojekyll', 'robots.txt', 'AGENTS.md', 'README.md']) {
+for (const required of ['.nojekyll', 'robots.txt', 'AGENTS.md', 'README.md', 'IMPORT_REPORT.md', 'data/import-audit.json']) {
   if (!fs.existsSync(path.join(root, required))) fail(`Missing required file: ${required}`);
 }
 
