@@ -37,6 +37,8 @@ a{color:inherit}
 .control-grid{display:grid;grid-template-columns:minmax(220px,2fr) repeat(4,minmax(130px,1fr));gap:9px}
 .controls input,.controls select{width:100%;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:11px 12px;outline:none}
 .controls input:focus,.controls select:focus{border-color:var(--accent)}
+.sort-help{margin:9px 2px 0;color:var(--muted);font-size:11.5px;line-height:1.5}
+.sort-help b{color:var(--text)}
 .control-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
 .btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:11px;padding:9px 12px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;font-weight:650}
 .btn:hover{border-color:var(--accent);transform:translateY(-1px)}
@@ -125,10 +127,11 @@ a{color:inherit}
     </select>
     <select id="sort">
       <option value="smart">מומלץ: עדכני קודם</option><option value="new">החדש ביותר</option>
-      <option value="rating">ציון Audible</option><option value="ratings">כמות דירוגי Audible</option>
+      <option value="rating">ציון Audible — גבוה לנמוך</option><option value="ratings">מספר דירוגי Audible — גבוה לנמוך</option>
       <option value="title">שם הספר A–Z</option><option value="author">מחבר A–Z</option>
     </select>
   </div>
+  <div id="sortHelp" class="sort-help" aria-live="polite"></div>
   <div class="control-row">
     <button class="btn" id="refreshBtn">↻ רענן נתוני הכרטיסים המוצגים</button>
     <button class="btn" id="stopTts">⏹ עצור הקראה</button>
@@ -213,6 +216,25 @@ function yearOK(b){
  if(state.year==="2010") return y>=2010&&y<=2014;
  return y>=2000&&y<=2009;
 }
+    function numeric(value){
+      if(value==null||value==="")return null;
+      const n=Number(value);return Number.isFinite(n)?n:null;
+    }
+function compareAvailableDesc(aValue,bValue){
+ const a=numeric(aValue),b=numeric(bValue);
+ if(a==null&&b==null)return 0;
+ if(a==null)return 1;
+ if(b==null)return -1;
+ return b-a;
+}
+function reliableAudibleSalesDataset(){
+ return BOOKS.length>0&&BOOKS.every(b=>
+   numeric(b.audible_sales)!=null&&
+   b.audible_sales_verified===true&&
+   /^https:\/\//i.test(b.audible_sales_source_url||"")&&
+   /^\d{4}-\d{2}-\d{2}$/.test(b.audible_sales_verified_at||"")
+ );
+}
 function filtered(){
  let arr=BOOKS.filter(b=>{
    const hay=norm(b.title+" "+b.author+" "+b.summary_he+" "+b.genre+" "+b.topic);
@@ -223,11 +245,12 @@ function filtered(){
           (state.source==="all"||(state.source==="current"&&isCurrent(b))||(state.source==="modern"&&!isCurrent(b)));
  });
  arr.sort((a,b)=>{
-   const ar=a._liveRating??a.rating_avg??-1, br=b._liveRating??b.rating_avg??-1;
-   const ac=a._liveCount??a.rating_count??-1, bc=b._liveCount??b.rating_count??-1;
-   if(state.sort==="new") return b.year-a.year||a.title.localeCompare(b.title);
-   if(state.sort==="rating") return br-ar||bc-ac;
-   if(state.sort==="ratings") return bc-ac||br-ar;
+   const ar=a._liveRating??a.rating_avg??null, br=b._liveRating??b.rating_avg??null;
+   const ac=a._liveCount??a.rating_count??null, bc=b._liveCount??b.rating_count??null;
+   if(state.sort==="new") return compareAvailableDesc(a.year,b.year)||a.title.localeCompare(b.title);
+   if(state.sort==="rating") return compareAvailableDesc(ar,br)||compareAvailableDesc(ac,bc)||compareAvailableDesc(a.year,b.year)||a.title.localeCompare(b.title);
+   if(state.sort==="ratings") return compareAvailableDesc(ac,bc)||compareAvailableDesc(ar,br)||compareAvailableDesc(a.year,b.year)||a.title.localeCompare(b.title);
+   if(state.sort==="sales"&&reliableAudibleSalesDataset())return compareAvailableDesc(a.audible_sales,b.audible_sales)||a.title.localeCompare(b.title);
    if(state.sort==="title") return a.title.localeCompare(b.title);
    if(state.sort==="author") return a.author.localeCompare(b.author);
    return (Number(isCurrent(b))-Number(isCurrent(a))) || (bc-ac) || (b.year-a.year) || a.title.localeCompare(b.title);
@@ -283,8 +306,27 @@ function escapeHtml(s){
 function render(){
  const arr=filtered();
  $("#counter").textContent=`מוצגים ${arr.length} מתוך ${BOOKS.length}`;
+ updateSortHelp(arr);
  $("#grid").innerHTML=arr.length?arr.map(cardHTML).join(""):`<div class="empty">לא נמצאו ספרים לפי הסינון שבחרת.</div>`;
  bindCards(); setupObserver();
+}
+function updateSortHelp(arr){
+ const ratingCount=arr.filter(b=>numeric(b._liveRating??b.rating_avg)!=null).length;
+ const ratingsCount=arr.filter(b=>numeric(b._liveCount??b.rating_count)!=null).length;
+ const yearCount=arr.filter(b=>numeric(b.year)!=null).length;
+ const messages={
+   smart:"מיון משולב לפי עדכניות הרשימה, מספר דירוגים ושנת פרסום.",
+   new:`לפי שנת פרסום, מהחדשה לישנה · נתון זמין ל־${yearCount} מתוך ${arr.length}.`,
+   rating:`לפי ציון Audible, מהגבוה לנמוך · נתון זמין ל־${ratingCount} מתוך ${arr.length}; חסרים מופיעים בסוף.`,
+   ratings:`לפי מספר דירוגי Audible, מהגבוה לנמוך · נתון זמין ל־${ratingsCount} מתוך ${arr.length}; חסרים מופיעים בסוף.`,
+   title:"מיון אלפביתי לפי שם הספר.",
+   author:"מיון אלפביתי לפי שם המחבר.",
+   sales:"לפי מכירות Audible מאומתות, מהגבוה לנמוך."
+ };
+ const salesPolicy=reliableAudibleSalesDataset()
+   ?"נתוני מכירות Audible מלאים ומאומתים; מיון מכירות זמין."
+   :"מיון מכירות אינו מוצג: אין נתוני מכירות Audible מלאים, אחידים ומאומתים לכל הקטלוג.";
+ $("#sortHelp").innerHTML=`<b>${messages[state.sort]||messages.smart}</b> ${salesPolicy}`;
 }
 function bindCards(){
  document.querySelectorAll(".card").forEach(card=>{
@@ -411,6 +453,7 @@ function updateCard(card,b){
 function setup(){
  renderGenreNav();
  updateTopicOptions();
+ if(reliableAudibleSalesDataset())$("#sort").insertAdjacentHTML("beforeend",'<option value="sales">מכירות Audible — גבוה לנמוך</option>');
  $("#totalStat").textContent=BOOKS.length;
  $("#currentStat").textContent=BOOKS.filter(isCurrent).length;
  $("#newStat").textContent=BOOKS.filter(b=>b.year>=2020).length;

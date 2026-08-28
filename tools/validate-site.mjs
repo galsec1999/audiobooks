@@ -50,6 +50,16 @@ function validateHtml(filename, html) {
   if (!html.includes('📖 תקצירים והעמקה') || !html.includes('duration_seconds)<1200')) {
     fail(`${prefix} missing the verified long-form resources gate.`);
   }
+  if (!html.includes('value="rating"') || !html.includes('value="ratings"') || !html.includes('value="new"')) {
+    fail(`${prefix} missing required rating, ratings-count, or newest sort options.`);
+  }
+  if (!html.includes('reliableAudibleSalesDataset') || !html.includes('audible_sales_verified===true')) {
+    fail(`${prefix} missing the verified-complete Audible sales sort gate.`);
+  }
+  const staticMarkup = html.split(/<script\b/i, 1)[0];
+  if (/<option\s+value=["']sales["']/i.test(staticMarkup)) {
+    fail(`${prefix} must not expose a static sales sort without a complete verified Audible dataset.`);
+  }
 }
 
 const htmlFiles = fs.readdirSync(root, { withFileTypes: true })
