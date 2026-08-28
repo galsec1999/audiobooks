@@ -47,6 +47,10 @@ function validateHtml(filename, html) {
   if (!html.includes('id="genreNav"') || !html.includes('b.genre=b.genre||"Self-Help"')) {
     fail(`${prefix} missing the top-level genre model or navigation.`);
   }
+  if (!html.includes('id="filtersToggle"') || !html.includes('aria-controls="filtersPanel"')
+      || !html.includes('id="filtersPanel"') || !html.includes('.controls.filters-open .filters-panel')) {
+    fail(`${prefix} missing the collapsible mobile filters panel.`);
+  }
   if (!html.includes('📖 תקצירים והעמקה') || !html.includes('duration_seconds)<1200')) {
     fail(`${prefix} missing the verified long-form resources gate.`);
   }
@@ -105,7 +109,16 @@ function parseBookArray(name) {
 const originalBooks = parseBookArray('BOOKS');
 const importedBooks = parseBookArray('IMPORTED_BOOKS');
 const aiBusinessBooks = parseBookArray('AI_BUSINESS_BOOKS');
-const allBooks = [...originalBooks, ...importedBooks, ...aiBusinessBooks];
+const recentAiBusinessBooks = parseBookArray('RECENT_AI_BUSINESS_BOOKS');
+const allBooks = [...originalBooks, ...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks];
+let publisherSummaries = {};
+try {
+  const match = homepageHtml.match(/const PUBLISHER_SUMMARIES=(\{[\s\S]*?\});\r?\nconst AI_BUSINESS_OVERRIDES=/);
+  if (!match) throw new Error('declaration not found');
+  publisherSummaries = JSON.parse(match[1]);
+} catch (error) {
+  fail(`Missing or invalid PUBLISHER_SUMMARIES: ${error.message}`);
+}
 const importAuditPath = path.join(root, 'data', 'import-audit.json');
 let importAudit = null;
 try {
@@ -126,11 +139,12 @@ for (const book of allBooks) {
 if (originalBooks.length !== 185
     || importedBooks.length !== importAudit?.imported_rows
     || aiBusinessBooks.length !== 22
-    || allBooks.length !== 185 + (importAudit?.imported_rows ?? 0) + 22
+    || recentAiBusinessBooks.length !== 5
+    || allBooks.length !== 185 + (importAudit?.imported_rows ?? 0) + 22 + 5
     || (importAudit?.imported_rows ?? 0) + (importAudit?.rejected_rows ?? 0) !== importAudit?.candidate_rows) {
   fail(`Unexpected catalog size: original=${originalBooks.length}, imported=${importedBooks.length}, ai-business=${aiBusinessBooks.length}, total=${allBooks.length}.`);
 }
-for (const book of [...importedBooks, ...aiBusinessBooks]) {
+for (const book of [...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks]) {
   const asinPattern = /^(?:B[0-9A-Z]{9}|[0-9]{9}[0-9X])$/;
   const expectedUrl = new RegExp(`^https://www\\.audible\\.com/pd/(?:.+/)?${book.audible_asin}$`, 'i');
   if (book.genre !== 'Self-Help' || !book.topic) fail(`Imported book has invalid genre/topic: ${book.title}.`);
@@ -142,8 +156,25 @@ for (const book of [...importedBooks, ...aiBusinessBooks]) {
       || !book.narrator || !Number.isFinite(book.audible_runtime_minutes)) {
     fail(`Imported book lacks verified audiobook metadata: ${book.title}.`);
   }
-  if (book.sales != null || book.rating_avg != null || book.rating_count != null) {
+  if (!recentAiBusinessBooks.includes(book) && (book.sales != null || book.rating_avg != null || book.rating_count != null)) {
     fail(`Imported book contains unverified sales or rating data: ${book.title}.`);
+  }
+}
+for (const book of recentAiBusinessBooks) {
+  if (book.topic !== 'AI ועסקים' || book.category !== 'AI ועסקים'
+      || book.audible_release_date < '2023-08-28'
+      || !Number.isFinite(book.rating_avg) || book.rating_avg < 4.4
+      || !Number.isInteger(book.rating_count) || book.rating_count < 100
+      || book.rating_verified_at !== '2026-08-28') {
+    fail(`Recent AI/business quality gate failed: ${book.title}.`);
+  }
+}
+const booksNeedingPublisherSummary = [...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks];
+for (const book of booksNeedingPublisherSummary) {
+  const summary = publisherSummaries[book.audible_asin];
+  if (summary?.status !== 'verified' || typeof summary.text !== 'string' || summary.text.trim().length < 40
+      || summary.source !== 'Audible / publisher' || !/^https:\/\/www\.audible\.com\/pd\//i.test(summary.source_url ?? '')) {
+    fail(`Missing a verified publisher summary: ${book.title}.`);
   }
 }
 if (aiBusinessBooks.some((book) => book.topic !== 'AI ועסקים' || book.category !== 'AI ועסקים')
@@ -153,7 +184,7 @@ if (aiBusinessBooks.some((book) => book.topic !== 'AI ועסקים' || book.cate
   fail('The AI and business topic or its existing-book overrides are incomplete.');
 }
 
-for (const required of ['.nojekyll', 'robots.txt', 'AGENTS.md', 'README.md', 'IMPORT_REPORT.md', 'AI_BUSINESS_REPORT.md', 'data/import-audit.json']) {
+for (const required of ['.nojekyll', 'robots.txt', 'AGENTS.md', 'README.md', 'IMPORT_REPORT.md', 'AI_BUSINESS_REPORT.md', 'data/import-audit.json', 'data/publisher-summary-audit.json']) {
   if (!fs.existsSync(path.join(root, required))) fail(`Missing required file: ${required}`);
 }
 
