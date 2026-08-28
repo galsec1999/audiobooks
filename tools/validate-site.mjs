@@ -104,7 +104,8 @@ function parseBookArray(name) {
 
 const originalBooks = parseBookArray('BOOKS');
 const importedBooks = parseBookArray('IMPORTED_BOOKS');
-const allBooks = [...originalBooks, ...importedBooks];
+const aiBusinessBooks = parseBookArray('AI_BUSINESS_BOOKS');
+const allBooks = [...originalBooks, ...importedBooks, ...aiBusinessBooks];
 const importAuditPath = path.join(root, 'data', 'import-audit.json');
 let importAudit = null;
 try {
@@ -124,11 +125,12 @@ for (const book of allBooks) {
 }
 if (originalBooks.length !== 185
     || importedBooks.length !== importAudit?.imported_rows
-    || allBooks.length !== 185 + (importAudit?.imported_rows ?? 0)
+    || aiBusinessBooks.length !== 22
+    || allBooks.length !== 185 + (importAudit?.imported_rows ?? 0) + 22
     || (importAudit?.imported_rows ?? 0) + (importAudit?.rejected_rows ?? 0) !== importAudit?.candidate_rows) {
-  fail(`Unexpected catalog size: original=${originalBooks.length}, imported=${importedBooks.length}, total=${allBooks.length}.`);
+  fail(`Unexpected catalog size: original=${originalBooks.length}, imported=${importedBooks.length}, ai-business=${aiBusinessBooks.length}, total=${allBooks.length}.`);
 }
-for (const book of importedBooks) {
+for (const book of [...importedBooks, ...aiBusinessBooks]) {
   const asinPattern = /^(?:B[0-9A-Z]{9}|[0-9]{9}[0-9X])$/;
   const expectedUrl = new RegExp(`^https://www\\.audible\\.com/pd/(?:.+/)?${book.audible_asin}$`, 'i');
   if (book.genre !== 'Self-Help' || !book.topic) fail(`Imported book has invalid genre/topic: ${book.title}.`);
@@ -144,8 +146,14 @@ for (const book of importedBooks) {
     fail(`Imported book contains unverified sales or rating data: ${book.title}.`);
   }
 }
+if (aiBusinessBooks.some((book) => book.topic !== 'AI ועסקים' || book.category !== 'AI ועסקים')
+    || !homepageHtml.includes('"Co-Intelligence|Ethan Mollick"')
+    || !homepageHtml.includes('"The AI-Driven Leader|Geoff Woods"')
+    || !homepageHtml.includes('"The Nvidia Way|Tae Kim"')) {
+  fail('The AI and business topic or its existing-book overrides are incomplete.');
+}
 
-for (const required of ['.nojekyll', 'robots.txt', 'AGENTS.md', 'README.md', 'IMPORT_REPORT.md', 'data/import-audit.json']) {
+for (const required of ['.nojekyll', 'robots.txt', 'AGENTS.md', 'README.md', 'IMPORT_REPORT.md', 'AI_BUSINESS_REPORT.md', 'data/import-audit.json']) {
   if (!fs.existsSync(path.join(root, required))) fail(`Missing required file: ${required}`);
 }
 
