@@ -42,6 +42,14 @@ function validateHtml(filename, html) {
   if (/google-analytics|googletagmanager|\bgtag\s*\(|segment\.com|mixpanel|hotjar|clarity\.ms|connect\.facebook|facebook\.net|matomo|plausible|umami/i.test(html)) {
     fail(`${prefix} contains an analytics or tracking integration.`);
   }
+  if (/<iframe\b/i.test(html)) fail(`${prefix} must not embed third-party frames.`);
+  if (/youtube\.com\/shorts\//i.test(html)) fail(`${prefix} must not link to YouTube Shorts.`);
+  if (!html.includes('id="genreNav"') || !html.includes('b.genre=b.genre||"Self-Help"')) {
+    fail(`${prefix} missing the top-level genre model or navigation.`);
+  }
+  if (!html.includes('📖 תקצירים והעמקה') || !html.includes('duration_seconds)<1200')) {
+    fail(`${prefix} missing the verified long-form resources gate.`);
+  }
 }
 
 const htmlFiles = fs.readdirSync(root, { withFileTypes: true })
