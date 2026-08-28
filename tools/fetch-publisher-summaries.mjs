@@ -7,8 +7,8 @@ const toolsDir = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(toolsDir, '..');
 const indexPath = path.join(root, 'index.html');
 const auditPath = path.join(root, 'data', 'publisher-summary-audit.json');
-const verifiedAt = '2026-08-28';
-const arrayNames = ['IMPORTED_BOOKS', 'AI_BUSINESS_BOOKS', 'RECENT_AI_BUSINESS_BOOKS', 'RECENT_GENRE_BOOKS'];
+const verifiedAt = '2026-08-29';
+const arrayNames = ['IMPORTED_BOOKS', 'AI_BUSINESS_BOOKS', 'RECENT_AI_BUSINESS_BOOKS', 'SELF_HELP_SERIES_BOOKS', 'RECENT_GENRE_BOOKS'];
 
 function parseArray(html, name) {
   const match = html.match(new RegExp(`const ${name}=(\\[[\\s\\S]*?\\]);`));
@@ -69,7 +69,7 @@ function officialExcerpt(product) {
 
 async function fetchProduct(asin, attempt = 1) {
   const groups = 'contributors,product_desc,product_extended_attrs,category_ladders,media,rating,series';
-  const response = await fetch(`https://api.audible.com/1.0/catalog/products/${asin}?response_groups=${groups}`);
+  const response = await fetch(`https://api.audible.com/1.0/catalog/products/${asin}?response_groups=${groups}&image_sizes=500`);
   if (!response.ok) {
     if (attempt < 3 && (response.status === 429 || response.status >= 500)) {
       await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
@@ -108,6 +108,7 @@ const entries = await mapLimit([...byAsin], 8, async ([asin, book], index) => {
       source: 'Audible / publisher',
       source_url: book.audible_url,
       verified_at: verifiedAt,
+      cover_url: product.product_images?.['500'] || product.product_images?.['475'] || product.product_images?.['300'] || product.product_images?.['200'] || null,
       series: (product.series ?? []).map((item) => ({ name: item.title, sequence: item.sequence, asin: item.asin })),
       status: text ? 'verified' : 'missing'
     }];
@@ -134,6 +135,7 @@ const audit = {
   excerpt_policy: 'Up to 70 words from the official merchandising or publisher summary; no invented facts.',
   requested: byAsin.size,
   verified: verified.length,
+  covers: Object.values(summaries).filter((entry) => entry.cover_url).length,
   unresolved: unresolved.map(([asin, entry]) => ({ asin, status: entry.status, error: entry.error ?? null }))
 };
 fs.writeFileSync(auditPath, `${JSON.stringify(audit, null, 2)}\n`);

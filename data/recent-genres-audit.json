@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-28",
+  "generated_at": "2026-08-29",
   "date_window": {
-    "from": "2019-08-28",
-    "to": "2026-08-28"
+    "from": "2019-08-29",
+    "to": "2026-08-29"
   },
   "quality_gate": {
     "minimum_audible_rating": 4.3,
@@ -10,32 +10,187 @@
     "format": "unabridged",
     "language": "english"
   },
-  "selection_policy": "Prefer complete multi-book groups among qualifying recent titles, then fill by Audible ratings count and score.",
+  "selection_policy": "Exactly 70 official Audible series per genre, at least two qualifying books per series; round-robin selection up to 210 books.",
   "genres": [
     {
       "genre": "מדע בדיוני",
       "category_id": "18580628011",
-      "fetched": 750,
-      "qualified_before_title_dedupe": 199,
-      "qualified": 199,
-      "selected": 150,
-      "books_in_series": 137,
-      "multi_book_series": 26,
-      "average_rating": 4.75,
-      "total_ratings": 1261377
+      "child_categories": [
+        {
+          "id": "18580629011",
+          "name": "Adventure"
+        },
+        {
+          "id": "18580631011",
+          "name": "Alternate History"
+        },
+        {
+          "id": "18580632011",
+          "name": "Anthologies & Short Stories"
+        },
+        {
+          "id": "18574913011",
+          "name": "Christian"
+        },
+        {
+          "id": "18580633011",
+          "name": "Cyberpunk"
+        },
+        {
+          "id": "18580634011",
+          "name": "Dramatizations"
+        },
+        {
+          "id": "18580635011",
+          "name": "Dystopian"
+        },
+        {
+          "id": "18580636011",
+          "name": "First Contact"
+        },
+        {
+          "id": "18580638011",
+          "name": "Genetic Engineering"
+        },
+        {
+          "id": "18580639011",
+          "name": "Hard Science Fiction"
+        },
+        {
+          "id": "18580640011",
+          "name": "Humorous"
+        },
+        {
+          "id": "18573773011",
+          "name": "LGBTQ+"
+        },
+        {
+          "id": "18580641011",
+          "name": "Military"
+        },
+        {
+          "id": "18580642011",
+          "name": "Movie, TV & Video Game Tie-Ins"
+        },
+        {
+          "id": "18580643011",
+          "name": "Post-Apocalyptic"
+        },
+        {
+          "id": "18580537011",
+          "name": "Romantic"
+        },
+        {
+          "id": "18580644011",
+          "name": "Space Exploration"
+        },
+        {
+          "id": "18580645011",
+          "name": "Space Opera"
+        },
+        {
+          "id": "18580646011",
+          "name": "Steampunk"
+        },
+        {
+          "id": "18580647011",
+          "name": "Time Travel"
+        }
+      ],
+      "fetched": 9804,
+      "unique_products": 7635,
+      "qualified_before_title_dedupe": 1380,
+      "qualified": 1374,
+      "selected": 210,
+      "selected_series": 70,
+      "minimum_books_per_selected_series": 3,
+      "average_rating": 4.71,
+      "total_ratings": 513383
     },
     {
       "genre": "מתח",
       "category_id": "18574621011",
-      "fetched": 750,
-      "qualified_before_title_dedupe": 160,
-      "qualified": 160,
-      "selected": 150,
-      "books_in_series": 67,
-      "multi_book_series": 11,
-      "average_rating": 4.55,
-      "total_ratings": 1212599
+      "child_categories": [
+        {
+          "id": "18574433011",
+          "name": "Action & Adventure"
+        },
+        {
+          "id": "18574622011",
+          "name": "Anthologies & Short Stories"
+        },
+        {
+          "id": "18574914011",
+          "name": "Christian"
+        },
+        {
+          "id": "18574623011",
+          "name": "Crime Thrillers"
+        },
+        {
+          "id": "18574624011",
+          "name": "Domestic Thrillers"
+        },
+        {
+          "id": "18574625011",
+          "name": "Dramatizations"
+        },
+        {
+          "id": "18574627011",
+          "name": "Historical"
+        },
+        {
+          "id": "18573768011",
+          "name": "LGBTQ+"
+        },
+        {
+          "id": "18574628011",
+          "name": "Legal"
+        },
+        {
+          "id": "18574629011",
+          "name": "Medical & Forensic"
+        },
+        {
+          "id": "18574630011",
+          "name": "Military"
+        },
+        {
+          "id": "18574631011",
+          "name": "Psychological"
+        },
+        {
+          "id": "18580536011",
+          "name": "Romantic Suspense"
+        },
+        {
+          "id": "18574632011",
+          "name": "Spies & Politics"
+        },
+        {
+          "id": "18574638011",
+          "name": "Supernatural"
+        },
+        {
+          "id": "18574639011",
+          "name": "Suspense"
+        },
+        {
+          "id": "18574640011",
+          "name": "Technothrillers"
+        }
+      ],
+      "fetched": 8399,
+      "unique_products": 6649,
+      "qualified_before_title_dedupe": 702,
+      "qualified": 700,
+      "selected": 210,
+      "selected_series": 70,
+      "minimum_books_per_selected_series": 2,
+      "average_rating": 4.64,
+      "total_ratings": 831631
     }
   ],
-  "total_selected": 300
+  "total_selected": 420,
+  "covers_embedded": 420
 }

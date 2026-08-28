@@ -124,8 +124,9 @@ const originalBooks = parseBookArray('BOOKS');
 const importedBooks = parseBookArray('IMPORTED_BOOKS');
 const aiBusinessBooks = parseBookArray('AI_BUSINESS_BOOKS');
 const recentAiBusinessBooks = parseBookArray('RECENT_AI_BUSINESS_BOOKS');
+const selfHelpSeriesBooks = parseBookArray('SELF_HELP_SERIES_BOOKS');
 const recentGenreBooks = parseBookArray('RECENT_GENRE_BOOKS');
-const allBooks = [...originalBooks, ...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks, ...recentGenreBooks];
+const allBooks = [...originalBooks, ...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks, ...selfHelpSeriesBooks, ...recentGenreBooks];
 let publisherSummaries = {};
 try {
   const match = homepageHtml.match(/const PUBLISHER_SUMMARIES=(\{[\s\S]*?\});\r?\nconst AI_BUSINESS_OVERRIDES=/);
@@ -155,10 +156,27 @@ if (originalBooks.length !== 185
     || importedBooks.length !== importAudit?.imported_rows
     || aiBusinessBooks.length !== 22
     || recentAiBusinessBooks.length !== 5
-    || recentGenreBooks.length !== 300
-    || allBooks.length !== 185 + (importAudit?.imported_rows ?? 0) + 22 + 5 + 300
+    || selfHelpSeriesBooks.length !== 133
+    || recentGenreBooks.length !== 420
+    || allBooks.length !== 185 + (importAudit?.imported_rows ?? 0) + 22 + 5 + 133 + 420
     || (importAudit?.imported_rows ?? 0) + (importAudit?.rejected_rows ?? 0) !== importAudit?.candidate_rows) {
   fail(`Unexpected catalog size: original=${originalBooks.length}, imported=${importedBooks.length}, ai-business=${aiBusinessBooks.length}, recent-genres=${recentGenreBooks.length}, total=${allBooks.length}.`);
+}
+const selfHelpSeries = new Set();
+for (const book of [...originalBooks, ...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks, ...selfHelpSeriesBooks]) {
+  const embeddedSeries = publisherSummaries[book.audible_asin]?.series?.[0];
+  const key = book.series_name || embeddedSeries?.name;
+  if (key) selfHelpSeries.add(key);
+}
+if (selfHelpSeries.size !== 70) fail(`Self-Help must contain exactly 70 official series; found ${selfHelpSeries.size}.`);
+for (const book of selfHelpSeriesBooks) {
+  if (!Number.isFinite(book.rating_avg) || book.rating_avg < 4.3
+      || !Number.isInteger(book.rating_count) || book.rating_count < 25
+      || book.rating_verified_at !== '2026-08-29'
+      || book.audible_verified !== true || book.audible_format !== 'unabridged'
+      || !book.series_name || !/^https:\/\/m\.media-amazon\.com\/images\//i.test(book.cover_url ?? '')) {
+    fail(`Self-Help series quality gate failed: ${book.title}.`);
+  }
 }
 for (const book of [...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks]) {
   const asinPattern = /^(?:B[0-9A-Z]{9}|[0-9]{9}[0-9X])$/;
@@ -187,24 +205,34 @@ for (const book of recentAiBusinessBooks) {
 }
 for (const genre of ['מדע בדיוני', 'מתח']) {
   const books = recentGenreBooks.filter((book) => book.genre === genre);
-  if (books.length !== 150) fail(`${genre} must contain exactly 150 quality-gated recent books; found ${books.length}.`);
+  const seriesCounts = new Map();
   for (const book of books) {
-    if (book.audible_release_date < '2019-08-28' || book.audible_release_date > '2026-08-28'
+    const seriesKey = book.series_asin || book.series_name;
+    if (seriesKey) seriesCounts.set(seriesKey, (seriesCounts.get(seriesKey) ?? 0) + 1);
+  }
+  if (books.length !== 210) fail(`${genre} must contain exactly 210 quality-gated recent books; found ${books.length}.`);
+  if (seriesCounts.size !== 70 || [...seriesCounts.values()].some((count) => count < 2)) {
+    fail(`${genre} must contain exactly 70 official multi-book series; found ${seriesCounts.size}.`);
+  }
+  for (const book of books) {
+    if (book.audible_release_date < '2019-08-29' || book.audible_release_date > '2026-08-29'
         || book.year !== Number(book.audible_release_date.slice(0, 4))
         || !Number.isFinite(book.rating_avg) || book.rating_avg < 4.3
         || !Number.isInteger(book.rating_count) || book.rating_count < 100
-        || book.rating_verified_at !== '2026-08-28'
-        || book.audible_verified !== true || book.audible_format !== 'unabridged') {
+        || book.rating_verified_at !== '2026-08-29'
+        || book.audible_verified !== true || book.audible_format !== 'unabridged'
+        || !book.series_name || !/^https:\/\/m\.media-amazon\.com\/images\//i.test(book.cover_url ?? '')) {
       fail(`Recent ${genre} quality gate failed: ${book.title}.`);
     }
   }
 }
-const booksNeedingPublisherSummary = [...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks, ...recentGenreBooks];
+const booksNeedingPublisherSummary = [...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks, ...selfHelpSeriesBooks, ...recentGenreBooks];
 for (const book of booksNeedingPublisherSummary) {
   const summary = publisherSummaries[book.audible_asin];
   if (summary?.status !== 'verified' || typeof summary.text !== 'string' || summary.text.trim().length < 40
       || typeof summary.text_he !== 'string' || summary.text_he.trim().length < 40 || !/[\u0590-\u05ff]/.test(summary.text_he)
-      || summary.source !== 'Audible / publisher' || !/^https:\/\/www\.audible\.com\/pd\//i.test(summary.source_url ?? '')) {
+      || summary.source !== 'Audible / publisher' || !/^https:\/\/www\.audible\.com\/pd\//i.test(summary.source_url ?? '')
+      || !/^https:\/\/m\.media-amazon\.com\/images\//i.test(summary.cover_url ?? '')) {
     fail(`Missing a verified publisher summary: ${book.title}.`);
   }
 }
@@ -215,7 +243,7 @@ if (aiBusinessBooks.some((book) => book.topic !== 'AI ועסקים' || book.cate
   fail('The AI and business topic or its existing-book overrides are incomplete.');
 }
 
-for (const required of ['.nojekyll', 'robots.txt', 'manifest.webmanifest', 'sw.js', 'icons/icon-192.png', 'icons/icon-512.png', 'AGENTS.md', 'README.md', 'IMPORT_REPORT.md', 'AI_BUSINESS_REPORT.md', 'RECENT_GENRES_REPORT.md', 'data/import-audit.json', 'data/publisher-summary-audit.json', 'data/recent-genres-audit.json', 'data/hebrew-summary-translation-audit.json']) {
+for (const required of ['.nojekyll', 'robots.txt', 'manifest.webmanifest', 'sw.js', 'icons/icon-192.png', 'icons/icon-512.png', 'AGENTS.md', 'README.md', 'IMPORT_REPORT.md', 'AI_BUSINESS_REPORT.md', 'RECENT_GENRES_REPORT.md', 'data/import-audit.json', 'data/publisher-summary-audit.json', 'data/recent-genres-audit.json', 'data/self-help-series-audit.json', 'data/hebrew-summary-translation-audit.json']) {
   if (!fs.existsSync(path.join(root, required))) fail(`Missing required file: ${required}`);
 }
 
@@ -232,7 +260,7 @@ try {
 
 try {
   const translationAudit = JSON.parse(fs.readFileSync(path.join(root, 'data', 'hebrew-summary-translation-audit.json'), 'utf8'));
-  if (translationAudit.source_summaries !== 741 || translationAudit.translated_to_hebrew !== 741
+  if (translationAudit.source_summaries !== 994 || translationAudit.translated_to_hebrew !== 994
       || translationAudit.unresolved !== 0 || translationAudit.translations_under_40_characters !== 0
       || translationAudit.fallback_labeled_fragments !== 0) {
     fail('Hebrew summary translation audit is incomplete or contains low-quality fallbacks.');

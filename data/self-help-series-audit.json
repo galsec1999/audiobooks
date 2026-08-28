@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-08-29",
+  "quality_gate": {
+    "minimum_audible_rating": 4.3,
+    "minimum_audible_ratings_count": 25,
+    "format": "unabridged",
+    "language": "english"
+  },
+  "scope": [
+    "Relationships, Parenting & Personal Development",
+    "Personal Development",
+    "Business & Careers",
+    "Health & Wellness"
+  ],
+  "fetched": 18189,
+  "unique_products": 13122,
+  "qualified_series_books": 250,
+  "qualified_official_series": 157,
+  "qualified_multi_book_series": 61,
+  "existing_official_series": 11,
+  "final_target_series": 70,
+  "imported_books": 133,
+  "imported_covers": 133,
+  "selection_policy": "Keep existing official series, then prefer multi-book official Audible series. Import up to three quality-gated books per chosen series."
+}

@@ -10,7 +10,7 @@ CACHE_PATH = ROOT / "data" / "hebrew-summary-translations.json"
 AUDIT_PATH = ROOT / "data" / "hebrew-summary-translation-audit.json"
 MODEL_CACHE = ROOT / ".translation-model-cache"
 MODEL_NAME = "Helsinki-NLP/opus-mt-en-he"
-TRANSLATED_AT = "2026-08-28"
+TRANSLATED_AT = "2026-08-29"
 
 os.environ.setdefault("HF_HOME", str(MODEL_CACHE))
 os.environ.setdefault("HF_HUB_CACHE", str(MODEL_CACHE / "hub"))

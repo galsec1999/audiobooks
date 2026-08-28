@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-08-28",
+  "generated_at": "2026-08-29",
   "source": "Audible catalog API product_desc (publisher-supplied product copy)",
   "excerpt_policy": "Up to 70 words from the official merchandising or publisher summary; no invented facts.",
-  "requested": 741,
-  "verified": 741,
+  "requested": 994,
+  "verified": 994,
+  "covers": 994,
   "unresolved": []
 }
