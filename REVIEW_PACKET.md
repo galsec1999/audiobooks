@@ -1,4 +1,4 @@
-# חבילת סקירה לפרויקט Audiobooks — גרסת מסמך 1.4.1
+# חבילת סקירה לפרויקט Audiobooks — גרסת מסמך 1.5.0
 
 ## מה הושלם
 
@@ -20,6 +20,10 @@
 - `node tools/build-site.mjs`: עבר; נוצר `_site/index.html`.
 - SHA-256 של `index.html` ושל `_site/index.html` זהה: `0214985E9EF11D95904269929D795E2A14DA9F295155F41F42141BE8BF4D8026`.
 - לא נמצאו analytics, trackers, טעינות צד שלישי, sitemap או תיקיית נושא.
+- GitHub Actions `Validate HTML pages`, ריצה `33188050532`: עבר בהצלחה.
+- GitHub Actions `Deploy GitHub Pages`, ריצה `33188050460`: עבר בהצלחה.
+- האתר החי החזיר HTTP 200 ב־`https://galsec1999.github.io/audiobooks/`.
+- באתר החי אומתו תג robots, היעדר trackers ו־`robots.txt` החוסם את כל הסורקים.
 
 ## בעיות, מגבלות וסיכונים
 
@@ -28,8 +32,8 @@
 
 ## מה נשאר
 
-- push ראשון למאגר GitHub שכבר נוצר ואימות האתר החי.
+- אין משימת פרסום פתוחה. ניתן להוסיף בעתיד קטגוריות בתוך `index.html`.
 
 ## שער איכות
 
-- הבדיקות המקומיות עברו; האימות בענן טרם הושלם.
+- עבר: הבדיקות המקומיות, שני workflows ובדיקת האתר החי הושלמו בהצלחה.
