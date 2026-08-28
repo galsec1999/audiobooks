@@ -23,6 +23,6 @@ for (const filename of htmlFiles) {
 
 fs.copyFileSync(path.join(root, config.homepage), path.join(output, 'index.html'));
 fs.copyFileSync(path.join(root, '.nojekyll'), path.join(output, '.nojekyll'));
+fs.copyFileSync(path.join(root, 'robots.txt'), path.join(output, 'robots.txt'));
 
 console.log(`Built ${htmlFiles.length} source page(s) in _site; ${config.homepage} is index.html.`);
-

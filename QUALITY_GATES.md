@@ -1,4 +1,4 @@
-# שערי איכות לפרויקט Audiobooks — גרסת מסמך 1.0.0
+# שערי איכות לפרויקט Audiobooks — גרסת מסמך 1.1.0
 
 לפני commit או פרסום חייבים להתקיים כל התנאים הבאים:
 
@@ -9,4 +9,5 @@
 5. `git diff --check` אינו מדווח על שגיאות whitespace.
 6. קובץ הבית המוגדר ב־`site.config.json` קיים ונכלל בפרסום.
 7. תהליך GitHub Actions בשם `Deploy GitHub Pages` מסתיים בהצלחה לאחר push ל־`main`.
-
+8. כל דף כולל `noindex,nofollow`, ו־`robots.txt` חוסם את כל הסורקים.
+9. אין analytics, trackers או קובצי sitemap.

@@ -43,14 +43,29 @@ for (const filename of htmlFiles) {
   }
   if (!/<title>[^<]+<\/title>/i.test(html)) fail(`${prefix} missing a non-empty title.`);
   if (!/<meta\b[^>]*\bname=["']viewport["'][^>]*>/i.test(html)) fail(`${prefix} missing viewport metadata.`);
+  const robotsMeta = html.match(/<meta\b[^>]*\bname=["']robots["'][^>]*>/i)?.[0] ?? '';
+  if (!/\bcontent=["'][^"']*\bnoindex\b[^"']*\bnofollow\b[^"']*["']/i.test(robotsMeta)) {
+    fail(`${prefix} must declare robots noindex,nofollow.`);
+  }
   if (html.includes('\uFFFD')) fail(`${prefix} contains Unicode replacement characters.`);
   if (/\bfile:\/\//i.test(html)) fail(`${prefix} contains a file:// URL.`);
   if (/["'(]\\?[A-Za-z]:\\/.test(html)) fail(`${prefix} contains a local Windows path.`);
 }
 
-for (const required of ['.nojekyll', 'AGENTS.md', 'README.md']) {
+for (const required of ['.nojekyll', 'robots.txt', 'AGENTS.md', 'README.md']) {
   if (!fs.existsSync(path.join(root, required))) fail(`Missing required file: ${required}`);
 }
+
+const robots = fs.existsSync(path.join(root, 'robots.txt'))
+  ? fs.readFileSync(path.join(root, 'robots.txt'), 'utf8')
+  : '';
+if (!/^User-agent:\s*\*\s*\r?\nDisallow:\s*\/\s*$/im.test(robots.trim())) {
+  fail('robots.txt must block all crawlers with User-agent: * and Disallow: /.');
+}
+
+const sitemapFiles = fs.readdirSync(root, { withFileTypes: true })
+  .filter((entry) => entry.isFile() && /^sitemap(?:\.|$)/i.test(entry.name));
+if (sitemapFiles.length > 0) fail('Sitemap files are not allowed for this link-only site.');
 
 if (failures.length > 0) {
   console.error(failures.map((message) => `FAIL: ${message}`).join('\n'));
@@ -58,4 +73,3 @@ if (failures.length > 0) {
 }
 
 console.log(`PASS: validated ${htmlFiles.length} HTML page(s); homepage=${config.homepage}.`);
-
