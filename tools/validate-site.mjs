@@ -60,6 +60,20 @@ function validateHtml(filename, html) {
   if (!html.includes('reliableAudibleSalesDataset') || !html.includes('audible_sales_verified===true')) {
     fail(`${prefix} missing the verified-complete Audible sales sort gate.`);
   }
+  if (!html.includes('id="view"') || !html.includes('value="series"') || !html.includes('seriesHTML(arr)')) {
+    fail(`${prefix} missing the grouped series view.`);
+  }
+  if (!html.includes('🎧 שירותי אודיו נוספים') || !html.includes('open.spotify.com/search/')
+      || !html.includes('libro.fm/search?query=')) {
+    fail(`${prefix} missing clearly labelled alternative audiobook-service searches.`);
+  }
+  if (/books\.apple\.com|itunes\.apple\.com|appleCover\s*\(/i.test(html)) {
+    fail(`${prefix} must not include Apple Books links, data, or cover fallbacks.`);
+  }
+  if (!/<link\b[^>]*rel=["']manifest["'][^>]*href=["']manifest\.webmanifest["']/i.test(html)
+      || !html.includes('serviceWorker.register("./sw.js")') || !html.includes('id="installBtn"')) {
+    fail(`${prefix} missing the installable PWA wiring or install control.`);
+  }
   const staticMarkup = html.split(/<script\b/i, 1)[0];
   if (/<option\s+value=["']sales["']/i.test(staticMarkup)) {
     fail(`${prefix} must not expose a static sales sort without a complete verified Audible dataset.`);
@@ -110,7 +124,8 @@ const originalBooks = parseBookArray('BOOKS');
 const importedBooks = parseBookArray('IMPORTED_BOOKS');
 const aiBusinessBooks = parseBookArray('AI_BUSINESS_BOOKS');
 const recentAiBusinessBooks = parseBookArray('RECENT_AI_BUSINESS_BOOKS');
-const allBooks = [...originalBooks, ...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks];
+const recentGenreBooks = parseBookArray('RECENT_GENRE_BOOKS');
+const allBooks = [...originalBooks, ...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks, ...recentGenreBooks];
 let publisherSummaries = {};
 try {
   const match = homepageHtml.match(/const PUBLISHER_SUMMARIES=(\{[\s\S]*?\});\r?\nconst AI_BUSINESS_OVERRIDES=/);
@@ -140,9 +155,10 @@ if (originalBooks.length !== 185
     || importedBooks.length !== importAudit?.imported_rows
     || aiBusinessBooks.length !== 22
     || recentAiBusinessBooks.length !== 5
-    || allBooks.length !== 185 + (importAudit?.imported_rows ?? 0) + 22 + 5
+    || recentGenreBooks.length !== 300
+    || allBooks.length !== 185 + (importAudit?.imported_rows ?? 0) + 22 + 5 + 300
     || (importAudit?.imported_rows ?? 0) + (importAudit?.rejected_rows ?? 0) !== importAudit?.candidate_rows) {
-  fail(`Unexpected catalog size: original=${originalBooks.length}, imported=${importedBooks.length}, ai-business=${aiBusinessBooks.length}, total=${allBooks.length}.`);
+  fail(`Unexpected catalog size: original=${originalBooks.length}, imported=${importedBooks.length}, ai-business=${aiBusinessBooks.length}, recent-genres=${recentGenreBooks.length}, total=${allBooks.length}.`);
 }
 for (const book of [...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks]) {
   const asinPattern = /^(?:B[0-9A-Z]{9}|[0-9]{9}[0-9X])$/;
@@ -169,10 +185,25 @@ for (const book of recentAiBusinessBooks) {
     fail(`Recent AI/business quality gate failed: ${book.title}.`);
   }
 }
-const booksNeedingPublisherSummary = [...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks];
+for (const genre of ['מדע בדיוני', 'מתח']) {
+  const books = recentGenreBooks.filter((book) => book.genre === genre);
+  if (books.length !== 150) fail(`${genre} must contain exactly 150 quality-gated recent books; found ${books.length}.`);
+  for (const book of books) {
+    if (book.audible_release_date < '2019-08-28' || book.audible_release_date > '2026-08-28'
+        || book.year !== Number(book.audible_release_date.slice(0, 4))
+        || !Number.isFinite(book.rating_avg) || book.rating_avg < 4.3
+        || !Number.isInteger(book.rating_count) || book.rating_count < 100
+        || book.rating_verified_at !== '2026-08-28'
+        || book.audible_verified !== true || book.audible_format !== 'unabridged') {
+      fail(`Recent ${genre} quality gate failed: ${book.title}.`);
+    }
+  }
+}
+const booksNeedingPublisherSummary = [...importedBooks, ...aiBusinessBooks, ...recentAiBusinessBooks, ...recentGenreBooks];
 for (const book of booksNeedingPublisherSummary) {
   const summary = publisherSummaries[book.audible_asin];
   if (summary?.status !== 'verified' || typeof summary.text !== 'string' || summary.text.trim().length < 40
+      || typeof summary.text_he !== 'string' || summary.text_he.trim().length < 40 || !/[\u0590-\u05ff]/.test(summary.text_he)
       || summary.source !== 'Audible / publisher' || !/^https:\/\/www\.audible\.com\/pd\//i.test(summary.source_url ?? '')) {
     fail(`Missing a verified publisher summary: ${book.title}.`);
   }
@@ -184,8 +215,30 @@ if (aiBusinessBooks.some((book) => book.topic !== 'AI ועסקים' || book.cate
   fail('The AI and business topic or its existing-book overrides are incomplete.');
 }
 
-for (const required of ['.nojekyll', 'robots.txt', 'AGENTS.md', 'README.md', 'IMPORT_REPORT.md', 'AI_BUSINESS_REPORT.md', 'data/import-audit.json', 'data/publisher-summary-audit.json']) {
+for (const required of ['.nojekyll', 'robots.txt', 'manifest.webmanifest', 'sw.js', 'icons/icon-192.png', 'icons/icon-512.png', 'AGENTS.md', 'README.md', 'IMPORT_REPORT.md', 'AI_BUSINESS_REPORT.md', 'RECENT_GENRES_REPORT.md', 'data/import-audit.json', 'data/publisher-summary-audit.json', 'data/recent-genres-audit.json', 'data/hebrew-summary-translation-audit.json']) {
   if (!fs.existsSync(path.join(root, required))) fail(`Missing required file: ${required}`);
+}
+
+try {
+  const manifest = JSON.parse(fs.readFileSync(path.join(root, 'manifest.webmanifest'), 'utf8'));
+  if (manifest.start_url !== './' || manifest.scope !== './' || manifest.display !== 'standalone'
+      || !Array.isArray(manifest.icons) || !manifest.icons.some((icon) => icon.sizes === '192x192')
+      || !manifest.icons.some((icon) => icon.sizes === '512x512')) {
+    fail('manifest.webmanifest is missing the required relative-scope install metadata or icons.');
+  }
+} catch (error) {
+  fail(`Missing or invalid manifest.webmanifest: ${error.message}`);
+}
+
+try {
+  const translationAudit = JSON.parse(fs.readFileSync(path.join(root, 'data', 'hebrew-summary-translation-audit.json'), 'utf8'));
+  if (translationAudit.source_summaries !== 741 || translationAudit.translated_to_hebrew !== 741
+      || translationAudit.unresolved !== 0 || translationAudit.translations_under_40_characters !== 0
+      || translationAudit.fallback_labeled_fragments !== 0) {
+    fail('Hebrew summary translation audit is incomplete or contains low-quality fallbacks.');
+  }
+} catch (error) {
+  fail(`Missing or invalid Hebrew translation audit: ${error.message}`);
 }
 
 const robots = fs.existsSync(path.join(root, 'robots.txt'))

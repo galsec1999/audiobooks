@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-08-28",
+  "model": "Helsinki-NLP/opus-mt-en-he",
+  "execution": "local; no runtime translation service is loaded by the website",
+  "source_summaries": 741,
+  "translated_to_hebrew": 741,
+  "unresolved": 0,
+  "translations_under_40_characters": 0,
+  "fallback_labeled_fragments": 0
+}

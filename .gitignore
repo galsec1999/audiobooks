@@ -1,6 +1,7 @@
 _site/
+.translation-env/
+.translation-model-cache/
 .DS_Store
 Thumbs.db
 *.tmp
 *.bak
-

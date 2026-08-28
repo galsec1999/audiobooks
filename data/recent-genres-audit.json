@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-08-28",
+  "date_window": {
+    "from": "2019-08-28",
+    "to": "2026-08-28"
+  },
+  "quality_gate": {
+    "minimum_audible_rating": 4.3,
+    "minimum_audible_ratings_count": 100,
+    "format": "unabridged",
+    "language": "english"
+  },
+  "selection_policy": "Prefer complete multi-book groups among qualifying recent titles, then fill by Audible ratings count and score.",
+  "genres": [
+    {
+      "genre": "מדע בדיוני",
+      "category_id": "18580628011",
+      "fetched": 750,
+      "qualified_before_title_dedupe": 199,
+      "qualified": 199,
+      "selected": 150,
+      "books_in_series": 137,
+      "multi_book_series": 26,
+      "average_rating": 4.75,
+      "total_ratings": 1261377
+    },
+    {
+      "genre": "מתח",
+      "category_id": "18574621011",
+      "fetched": 750,
+      "qualified_before_title_dedupe": 160,
+      "qualified": 160,
+      "selected": 150,
+      "books_in_series": 67,
+      "multi_book_series": 11,
+      "average_rating": 4.55,
+      "total_ratings": 1212599
+    }
+  ],
+  "total_selected": 300
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Audiobooks — קטלוג ספרי אודיו",
+  "short_name": "Audiobooks",
+  "description": "קטלוג פרטי-בקישור של ספרי אודיו איכותיים, עם סינון לפי ז׳אנר וסדרות.",
+  "lang": "he",
+  "dir": "rtl",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0d12",
+  "theme_color": "#7c9cff",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

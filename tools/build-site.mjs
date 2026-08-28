@@ -23,5 +23,8 @@ for (const filename of htmlFiles) {
 
 fs.copyFileSync(path.join(root, '.nojekyll'), path.join(output, '.nojekyll'));
 fs.copyFileSync(path.join(root, 'robots.txt'), path.join(output, 'robots.txt'));
+fs.copyFileSync(path.join(root, 'manifest.webmanifest'), path.join(output, 'manifest.webmanifest'));
+fs.copyFileSync(path.join(root, 'sw.js'), path.join(output, 'sw.js'));
+fs.cpSync(path.join(root, 'icons'), path.join(output, 'icons'), { recursive: true });
 
-console.log(`Built ${htmlFiles.length} source page(s) at the Audiobooks site root.`);
+console.log(`Built ${htmlFiles.length} source page(s) plus the installable PWA shell at the Audiobooks site root.`);

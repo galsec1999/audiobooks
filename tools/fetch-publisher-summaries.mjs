@@ -8,7 +8,7 @@ const root = path.resolve(toolsDir, '..');
 const indexPath = path.join(root, 'index.html');
 const auditPath = path.join(root, 'data', 'publisher-summary-audit.json');
 const verifiedAt = '2026-08-28';
-const arrayNames = ['IMPORTED_BOOKS', 'AI_BUSINESS_BOOKS', 'RECENT_AI_BUSINESS_BOOKS'];
+const arrayNames = ['IMPORTED_BOOKS', 'AI_BUSINESS_BOOKS', 'RECENT_AI_BUSINESS_BOOKS', 'RECENT_GENRE_BOOKS'];
 
 function parseArray(html, name) {
   const match = html.match(new RegExp(`const ${name}=(\\[[\\s\\S]*?\\]);`));
@@ -68,7 +68,7 @@ function officialExcerpt(product) {
 }
 
 async function fetchProduct(asin, attempt = 1) {
-  const groups = 'contributors,product_desc,product_extended_attrs,category_ladders,media,rating';
+  const groups = 'contributors,product_desc,product_extended_attrs,category_ladders,media,rating,series';
   const response = await fetch(`https://api.audible.com/1.0/catalog/products/${asin}?response_groups=${groups}`);
   if (!response.ok) {
     if (attempt < 3 && (response.status === 429 || response.status >= 500)) {
@@ -108,6 +108,7 @@ const entries = await mapLimit([...byAsin], 8, async ([asin, book], index) => {
       source: 'Audible / publisher',
       source_url: book.audible_url,
       verified_at: verifiedAt,
+      series: (product.series ?? []).map((item) => ({ name: item.title, sequence: item.sequence, asin: item.asin })),
       status: text ? 'verified' : 'missing'
     }];
   } catch (error) {
